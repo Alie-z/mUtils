@@ -1,0 +1,52 @@
+{
+  "name": "js-utils-m",
+  "version": "1.0.0",
+  "description": "js-utils-m",
+  "main": "src/lib/index.js",
+  "dependencies": {
+    "hoek": "^5.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development --progress --colors",
+    "watch": "webpack --progress --colors --watch"
+  },
+  "keywords": [
+    "js",
+    "utils",
+    "js-utils"
+  ],
+  "author": "Aliez",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
+    "better-scroll": "^1.8.4",
+    "compass-mixins": "^0.12.10",
+    "css-loader": "^0.28.10",
+    "eslint": "^5.3.0",
+    "eslint-loader": "^2.1.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.0.6",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": ">=3.1.11",
+    "url-parse": ">=1.4.3",
+    "deep-extend": ">=0.5.1",
+    "atob": ">=2.1.0",
+    "randomatic": ">=3.0.0",
+    "cryptiles": ">=4.1.2",
+    "macaddress": ">=0.2.9"
+  },
+  "__npminstall_done": "Wed Nov 27 2019 16:18:30 GMT+0800 (GMT+08:00)"
+}
