@@ -1,11 +1,13 @@
 const webpack = require('webpack'); 	// 用于访问内置插件
 const path = require('path');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WebpackPromptPlugin = require('@dw/webpack-prompt-plugin');
+// const nodeExternals = require('webpack-node-externals');
+const importType = "umd";
 const extractSass = new ExtractTextPlugin({
-    filename: "css/[name]-[contenthash].css",
+    filename: "css/[name]-[hash].css",
     disable: process.env.NODE_ENV === "development"
 });
 
@@ -16,13 +18,15 @@ const resolve = function (dir) {
 module.exports = {
 	entry: {
 		// 这里只是编译的时候用的
-		index: './src/index.js',
-		// index: './src/lib/index.js'
+		index: './src/index.ts'
+		// index: './lib/index.js'
+		// index: './src/lib/index.ts'
 	},
 	output: {
-		path: path.resolve(__dirname, 'es5'),
+		path: path.resolve(__dirname, 'd-utils'),
 		publicPath: '',
-		filename: 'd-js-utils.js',
+		filename: 'd-utils.js',
+		// libraryTarget: importType,
 		libraryTarget: 'var',
 		library: 'Dutils',
 		libraryExport: 'default'
@@ -31,13 +35,13 @@ module.exports = {
 		rules: [
 			{
 				test: /\.css$/,
-        		use: ExtractTextPlugin.extract({
+        use: ExtractTextPlugin.extract({
 					fallback:"style-loader",
 					use:["css-loader"]
 				})
 			},
 			{
-				test: /\.scss$/,
+				test: /\.less$/,
 				use: ExtractTextPlugin.extract({
 					fallback:"style-loader",
 					use:[
@@ -45,7 +49,7 @@ module.exports = {
 							loader: 'css-loader'
 						},
 						{
-							loader: 'sass-loader'
+							loader: 'less-loader'
 						}
 					]
 				})
@@ -67,12 +71,8 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-				exclude: /(node_modules)/,
 				use: {
 					loader: 'babel-loader',
-					options: {
-						presets: ["env", "stage-2"]
-					}
 				}
 			},
 			{
@@ -87,6 +87,21 @@ module.exports = {
         ]
 			},
 			{
+				test: /\.ts$/,
+				use: [
+					{loader: 'babel-loader'},
+					{
+						loader: 'ts-loader',
+						options: {
+							// 加快编译速度
+							transpileOnly: true,
+							// 指定特定的ts编译配置，为了区分脚本的ts配置
+							configFile: path.resolve(__dirname, './tsconfig.json')
+						}
+					}
+				],
+			},
+			{
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "eslint-loader"
@@ -99,19 +114,24 @@ module.exports = {
 			template: 'index.html',
 			inject: true
 		}),
-		extractSass
+		extractSass,
+		// new CleanWebpackPlugin({
+		// 	verbose: false
+		// }),
+		new WebpackPromptPlugin()
 	],
 	devServer: {
 		// 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html。通过传入以下启用：
 		contentBase: "./",
 		host: '0.0.0.0',
 		// 端口号
-		port: 2002,
+		port: 2008,
 		//当有编译器错误或警告时，在浏览器中显示全屏覆盖。默认禁用。如果您只想显示编译器错误：
 		noInfo: true,
 		// 配置端口号
 		overlay: true,
 	},
+	devtool: process.env.NODE_ENV === "production" ? false : "source-map",
 	resolve: {
 		alias: {
 			'src': resolve('src'),
@@ -120,8 +140,13 @@ module.exports = {
 			'stylus': resolve('src/stylus'),
 			'script': resolve('src/script'),
 			'static': resolve('static'),
-		}
+		},
+		extensions: ['.ts', '.tsx', '.js', '.d.ts'],
+    modules: ['src' ,'node_modules']
 	},
+	// externals: [nodeExternals({
+	// 	importType: importType,
+	// })],
 	optimization: {
 		splitChunks: {
 			chunks: "all",

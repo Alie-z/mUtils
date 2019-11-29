@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es6", 
+    "module": "esnext",
+    "removeComments": false,
+    "declaration": true,
+    "outDir": "./lib",
+    "declarationDir": "./lib",
+    "baseUrl": "./",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "global.d.ts",
+      "typings"
+    ],
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "sourceMap": false,
+    "noImplicitAny": false
+  },
+  "files": [
+    "./src/lib/index.ts"
+  ],
+  "include": [
+    "src/lib/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
