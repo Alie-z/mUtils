@@ -1,4 +1,6 @@
-import { debounce } from './../genericUtils'
+// @ts-ignore
+import { debounce } from '../genericUtils'
+// @ts-ignore
 import EventUtils from './../eventUtils'
 
 let loadingRequestCount: number = 0

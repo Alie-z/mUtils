@@ -6,6 +6,7 @@ import { GenericType } from './../type'
 
 /**
  * @description 浏览器提示
+ * TODO 演示
  * @param { object } options  参数为对象，以下都是对象内的属性配置
  * @property { String } title 浏览器提示的标题  类似标题
  * @property { String } body 浏览器提示的内容主体  类似正文
@@ -24,8 +25,8 @@ import { GenericType } from './../type'
  */
 export function notification (options?: GenericType.INotification):Promise<any> {
   const defaultV = {
-    title: '未曾遗忘的青春',
-    body: 'Hello World !!!',
+    title: '疏影横斜水清浅',
+    body: '暗香浮动月黄昏',
     icon: 'http://www.daiwei.org/index/images/logo/dw1.png',
     show: () => {},
     click: () => {}
@@ -81,13 +82,13 @@ export function  layoutFramework (): void {
  * @param { Boolean } isStrict  true 返回一个字符串的长度，汉字算2个字符长度; false 直接返回长度
  * @return { Number } 返回字符串长度
  * @example
- * const str = 'd-utils库'
+ * const str = 'mUtils库'
  * console(calcStringLength(str))
  * console(calcStringLength(str, true))
  */
 export function calcStringLength (str: string, isStrict?: boolean): number {
   if (typeof str !== 'string') {
-    LogUtils.logError(`str must be string but found ${typeof str}`, '[d-utils] GenericUtils calcStringLength error => ')
+    LogUtils.logError(`str must be string but found ${typeof str}`, '[mUtils] GenericUtils calcStringLength error => ')
     return
   }
   if (!isStrict) return str.length
@@ -119,7 +120,7 @@ export function calcStringLength (str: string, isStrict?: boolean): number {
  */
 export function strTrim (str: string, type: GenericType.StrTrimType = GenericType.StrTrimType.LEFT_RIGHT): string {
   if (typeof str !== 'string') {
-    LogUtils.logError(`str must be string but found ${typeof str}`, '[d-utils] GenericUtils strTrim error => ')
+    LogUtils.logError(`str must be string but found ${typeof str}`, '[mUtils] GenericUtils strTrim error => ')
     return
   }
   switch (type) {
@@ -127,7 +128,7 @@ export function strTrim (str: string, type: GenericType.StrTrimType = GenericTyp
     return str.replace(/(^\s*)|(\s*$)/g, '')
   case 1:
     return str.replace(/\s/g, '')
-  case 2: 
+  case 2:
     return str.replace(/(^\s*)/g, '')
   case 3:
     return str.replace(/(\s*$)/g, '')
@@ -153,7 +154,7 @@ export function strTrim (str: string, type: GenericType.StrTrimType = GenericTyp
  */
 export function throttle (fn: Function, t = 1000): any {
   if (typeof fn !== 'function') {
-    LogUtils.logError(`第一个参数必须是方法`, '[d-utils] GenericUtils throttle error => ')
+    LogUtils.logError(`第一个参数必须是方法`, '[mUtils] GenericUtils throttle error => ')
     return
   }
   const _fn = fn
@@ -194,7 +195,7 @@ export function throttle (fn: Function, t = 1000): any {
  */
 export function debounce (fn: Function, t: number, immediate: boolean = true): any {
   if (typeof fn !== 'function') {
-    LogUtils.logError(`第一个参数必须是方法`, '[d-utils] GenericUtils debounce error => ')
+    LogUtils.logError(`第一个参数必须是方法`, '[mUtils] GenericUtils debounce error => ')
     return
   }
   let time: any

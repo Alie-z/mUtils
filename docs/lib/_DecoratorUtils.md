@@ -9,7 +9,7 @@ class A {
   @DecoratorUtils.log
   static calcStringLength (str: string, isStrict?: boolean): number {
     if (typeof str !== 'string') {
-      LogUtils.logError(`str must be string but found ${typeof str}`, '[d-utils] GenericUtils calcStringLength error => ')
+      LogUtils.logError(`str must be string but found ${typeof str}`, '[mUtils] GenericUtils calcStringLength error => ')
       return
     }
     if (!isStrict) return str.length
@@ -38,7 +38,7 @@ class A {
   @DecoratorUtils.fnTime
   static calcStringLength (str: string, isStrict?: boolean): number {
     if (typeof str !== 'string') {
-      LogUtils.logError(`str must be string but found ${typeof str}`, '[d-utils] GenericUtils calcStringLength error => ')
+      LogUtils.logError(`str must be string but found ${typeof str}`, '[mUtils] GenericUtils calcStringLength error => ')
       return
     }
     if (!isStrict) return str.length
@@ -53,5 +53,5 @@ class A {
 A.calcStringLength('nihao')
 
 // 结果
-// [d-utils] calcStringLength方法执行时间: : 4.06005859375ms
+// [mUtils] calcStringLength方法执行时间: : 4.06005859375ms
 ```

@@ -71,7 +71,7 @@ GenericUtils.layoutFramework()
 ```
 ##### `Demo`:
 ```js
-const str = 'd-utils组件'
+const str = 'mUtils组件'
 console.log(GenericUtils.calcStringLength(str))
 console.log(GenericUtils.calcStringLength(str, true))
 ```
@@ -93,7 +93,7 @@ console.log(GenericUtils.calcStringLength(str, true))
 ```
 ##### `Demo`:
 ```js
-const str = ' d -js- ut ils '
+const str = ' h e  l l o  '
 // 0: 去除首位空格 默认为0
 GenericUtils.strTrim(str)
 GenericUtils.strTrim(str, 0)
@@ -105,11 +105,11 @@ GenericUtils.strTrim(str, 2)
 GenericUtils.strTrim(str, 3)
 ```
 ##### `return` 为方便比较添加引号
-    - 第一个返回结果：'d -js- ut ils'
-    - 第二个返回结果：'d -js- ut ils'
-    - 第三个返回结果：'d-utils'
-    - 第四个返回结果：'d -js- ut ils '
-    - 第五个返回结果：' d -js- ut ils'
+    - 第一个返回结果：
+    - 第二个返回结果：
+    - 第三个返回结果：
+    - 第四个返回结果：
+    - 第五个返回结果：
 
 ## throttle
 `throttle`节流函数，设定多少秒执行下一次效果

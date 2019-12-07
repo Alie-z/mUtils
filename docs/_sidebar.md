@@ -13,5 +13,4 @@
   * [LogUtils](/lib/_LogUtils.md)
   * [PerformanceUtils](/lib/_PerformanceUtils.md)
   * [UrlUtils](/lib/_UrlUtils.md)
-  * [WeixinUtils](/lib/_WeixinUtils.md)
   * [ImageUtils](/lib/_ImageUtils.md)

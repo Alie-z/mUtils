@@ -1,0 +1,69 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #fff;
+}
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+body .title {
+  font-size: 0.82rem;
+  display: inline-block;
+  position: relative;
+  background: -webkit-linear-gradient(left top, #CF8BF3, #FDB99B);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(bottom right, #CF8BF3, #FDB99B);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(bottom right, #CF8BF3, #FDB99B);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(to bottom right, #CF8BF3, #FDB99B);
+  /* 标准的语法 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0;
+}
+body .disc {
+  font-size: 0.34rem;
+  color: #333;
+}
+body .href {
+  margin-top: 20px;
+  color: #333;
+  font-size: 0.32rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+body .href:link,
+body .href:active,
+body .href:visited {
+  color: #333;
+}
+body .github-info {
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+body .github-info span {
+  color: #666;
+  font: Arial, "Helvetica Neue", Helvetica, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 0.28rem;
+}
+body .btn {
+  width: 320px;
+  line-height: 40px;
+  background: #999;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/*# sourceMappingURL=index-cd1bead798ce081a8271.css.map*/

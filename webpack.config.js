@@ -23,9 +23,9 @@ module.exports = {
 		// index: './src/lib/index.ts'
 	},
 	output: {
-		path: path.resolve(__dirname, 'd-utils'),
+		path: path.resolve(__dirname, 'mUtils'),
 		publicPath: '',
-		filename: 'd-utils.js',
+		filename: 'mUtils.js',
 		// libraryTarget: importType,
 		libraryTarget: 'var',
 		library: 'Dutils',
@@ -123,9 +123,9 @@ module.exports = {
 	devServer: {
 		// 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html。通过传入以下启用：
 		contentBase: "./",
-		host: '0.0.0.0',
+		host: '127.0.0.1',
 		// 端口号
-		port: 2008,
+		port: 8088,
 		//当有编译器错误或警告时，在浏览器中显示全屏覆盖。默认禁用。如果您只想显示编译器错误：
 		noInfo: true,
 		// 配置端口号
@@ -169,3 +169,12 @@ module.exports = {
 		}
 	}
 }
+
+// 1. 修改版本号：使用 npm version <update_type> 进行修改，update_type 有三个参数
+// patch：这个是补丁的意思，补丁最合适；
+// minor：这个是小修小改；
+// major：这个是大改咯；
+// 具体咋用：
+// 比如我想来个1.0.1版本，注意，是最后一位修改了增1，那么命令：npm version patch
+// 比如我想来个1.1.0版本，注意，是第二位修改了增1，那么命令： npm version minor
+// 比如我想来个2.0.0版本，注意，是第一位修改了增1，那么命令： npm version major

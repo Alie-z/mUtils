@@ -56,7 +56,7 @@ export default class LogUtils {
    * @example
    * LogUtils.logDefault('date', 'logDefault')
    */
-  static logDefault (data: any, dataTitile: string = '[d-utils] log_utils default => '): void {
+  static logDefault (data: any, dataTitile: string = '[mUtils] log_utils default => '): void {
     LogUtils.console(data, dataTitile, LogUtils.defaultColor)
   }
 
@@ -67,7 +67,7 @@ export default class LogUtils {
    * @example
    * LogUtils.logInfo('date', 'logInfo')
    */
-  static logInfo (data: any, dataTitile: string = '[d-utils] log_utils info => '): void {
+  static logInfo (data: any, dataTitile: string = '[mUtils] log_utils info => '): void {
     LogUtils.console(data, dataTitile, LogUtils.infoColor)
   }
 
@@ -78,7 +78,7 @@ export default class LogUtils {
    * @example
    * LogUtils.logInfo('date', 'logSuccess')
    */
-  static logSuccess (data: any, dataTitile: string = '[d-utils] log_utils success => '): void {
+  static logSuccess (data: any, dataTitile: string = '[mUtils] log_utils success => '): void {
     LogUtils.console(data, dataTitile, LogUtils.successColor)
   }
 
@@ -89,7 +89,7 @@ export default class LogUtils {
    * @example
    * LogUtils.logInfo('date', 'logError')
    */
-  static logError (data: any, dataTitile: string = '[d-utils] log_utils error => '): void {
+  static logError (data: any, dataTitile: string = '[mUtils] log_utils error => '): void {
     LogUtils.console(data, dataTitile, LogUtils.errorColor)
   }
 
@@ -100,7 +100,7 @@ export default class LogUtils {
    * @example
    * LogUtils.logInfo('date', 'logWarning')
    */
-  static logWarning (data: any, dataTitile: string = '[d-utils] log_utils warning => '): void {
+  static logWarning (data: any, dataTitile: string = '[mUtils] log_utils warning => '): void {
     LogUtils.console(data, dataTitile, LogUtils.warningColor)
   }
 
@@ -135,14 +135,14 @@ export default class LogUtils {
   /**
    * log打印一个group组  默认全部展示折叠
    */
-  static group (dataTitile: string = '[d-utils] log_utils group => ', color: string = LogUtils.defaultColor): void {
+  static group (dataTitile: string = '[mUtils] log_utils group => ', color: string = LogUtils.defaultColor): void {
     console.group(`%c${dataTitile}`, `color: ${color}; font-weight: bold`)
   }
 
   /**
    * log打印一个group组  折叠的
    */
-  static groupCollapsed (dataTitile: string = '[d-utils] log_utils group_collapsed => ', color: string = LogUtils.defaultColor): void {
+  static groupCollapsed (dataTitile: string = '[mUtils] log_utils group_collapsed => ', color: string = LogUtils.defaultColor): void {
     console.groupCollapsed(`%c${dataTitile}`, `color: ${color}; font-weight: bold`)
   }
 

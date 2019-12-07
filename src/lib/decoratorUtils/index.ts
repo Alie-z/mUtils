@@ -11,7 +11,7 @@ export function log (target, name, descriptor): any {
   const fn = descriptor.value;
     descriptor.value = (...args) => {
     let result
-    LogUtils.groupCollapsed(`[d-utils] DecoratorUtils ${name}方法的执行信息`, LogUtils.defaultColor)
+    LogUtils.groupCollapsed(`[mUtils] DecoratorUtils ${name}方法的执行信息`, LogUtils.defaultColor)
     LogUtils.logDefault(`${name}(${args})`, `方法准备执行:`)
     LogUtils.logInfo(args, '详细的参数值: ')
     try {
@@ -31,18 +31,18 @@ export function log (target, name, descriptor): any {
 export function fnTime (target, name, descriptor): any {
   const fn = descriptor.value
   if (typeof fn !== 'function') {
-    LogUtils.logError(`${name}必须为方法`, `[d-utils] fnTime 执行失败结果: `)
+    LogUtils.logError(`${name}必须为方法`, `[mUtils] fnTime 执行失败结果: `)
     return
   }
 
   return {
     ...descriptor,
     value () {
-      console.time(`[d-utils] ${name}方法执行时间: `);
+      console.time(`[mUtils] ${name}方法执行时间: `);
       try {
         return fn.apply(target, arguments)
       } finally {
-        console.timeEnd(`[d-utils] ${name}方法执行时间: `)
+        console.timeEnd(`[mUtils] ${name}方法执行时间: `)
       }
     }
   }

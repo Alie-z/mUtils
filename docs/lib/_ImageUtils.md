@@ -47,7 +47,7 @@ imageCanvas.addSourse({
   type: 'image',
   needRound: false
 }).addSourse({
-  content: 'd-utils',
+  content: 'mUtils',
   left: 0.2,
   top: 0.2,
   type: 'text'
@@ -74,7 +74,7 @@ imageCanvas.addSourse({
   type: 'image',
   needRound: false
 }).addSourse({
-  content: 'd-utils',
+  content: 'mUtils',
   left: 0.2,
   top: 0.2,
   type: 'text'

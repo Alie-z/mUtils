@@ -1,62 +1,67 @@
 .colortext-lt (@color1, @color2) {
-	position: relative;
-  background: -webkit-linear-gradient(left top, @color1 , @color2);   /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(bottom right, @color1, @color2);     /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient(bottom right, @color1, @color2);   /* Firefox 3.6 - 15 */
-  background: linear-gradient(to bottom right, @color1 , @color2);    /* 标准的语法 */
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  position: relative;
+  background: -webkit-linear-gradient(left top, @color1, @color2); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(bottom right, @color1, @color2); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(bottom right, @color1, @color2); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to bottom right, @color1, @color2); /* 标准的语法 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-body,html{
-	margin: 0;
-	padding: 0;
-	height:100%;
-	background: #fff;
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #fff;
 }
 
-body{
-	// background: red;
-	display: flex;
-	width: 100%;
-	height: 100%;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
-	.title{
-		font-size: 0.82rem;
-		display: inline-block;
-		.colortext-lt(#CF8BF3, #FDB99B);
-		margin-top: 0;
-	}
-	.disc{
-		font-size: 0.34rem;
-		color: #333;
-	}
+body {
+  // background: red;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 
-	.href{
-		margin-top: 20px;
-		color: #333;
-		font-size: 0.32rem;
-		transition: all 0.3s;
-		cursor: pointer;
-		&:link, &:active, &:visited{
-			color: #333;
-		}
-	}
-
-	.github-info{
-		margin-top: 40px;
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		span{
-			color: #666;
-			font: Arial,"Helvetica Neue",Helvetica,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
-			font-size: 0.28rem;
-		}
+  .title {
+    font-size: 0.82rem;
+    display: inline-block;
+    .colortext-lt(#CF8BF3, #FDB99B);
+    margin-top: 0;
   }
-  .btn{
+
+  .disc {
+    font-size: 0.34rem;
+    color: #333;
+  }
+
+  .href {
+    margin-top: 20px;
+    color: #333;
+    font-size: 0.32rem;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:link, &:active, &:visited {
+      color: #333;
+    }
+  }
+
+  .github-info {
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    span {
+      color: #666;
+      font: Arial, "Helvetica Neue", Helvetica, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+      font-size: 0.28rem;
+    }
+  }
+
+  .btn {
     width: 320px;
     line-height: 40px;
     background: #999;

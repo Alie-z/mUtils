@@ -32,7 +32,7 @@ export declare function isIOS(): boolean;
  */
 export declare function isAndroid(): boolean;
 /**
- * @description 正则表达式 手机的合法校验 /^1[3-9]\d{9}$/
+ * @description 正则表达式 中国手机的合法校验 /^1[3-9]\d{9}$/
  */
 export declare const EXP_PHONE_NUM: RegExp;
 /**

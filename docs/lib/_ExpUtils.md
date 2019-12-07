@@ -50,7 +50,7 @@ ExpUtils.isAndroid() // false
 ```
 
 ## EXP_PHONE_NUM
-`EXP_PHONE_NUM`: 属性， 正则表达式 手机的合法校验
+`EXP_PHONE_NUM`: 属性， 正则表达式 中国手机的合法校验
 
 ## isPhoneNum
 `isPhoneNum`: 方法， 判断是否是正确的手机号格式

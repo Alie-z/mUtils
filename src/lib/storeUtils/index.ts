@@ -12,7 +12,7 @@ import LogUtils from './../logUtils/index'
  * // 设置name为test的值为12345，设置过期时间为1小时
  * setCookie('test', '12345', 60 * 60 * 1000)
  */
-export function setCookie (name: string, value: string, exp: number = 60 * 60 * 2 * 1000): void {
+export function setCookie(name: string, value: string, exp: number = 60 * 60 * 2 * 1000): void {
   const date = new Date()
   date.setTime(date.getTime() + exp)
   document.cookie = `${name}=${escape(value)};expires=${date.toUTCString()}`
@@ -25,17 +25,17 @@ export function setCookie (name: string, value: string, exp: number = 60 * 60 * 
  * @example
  * getCookie('test')
  */
-export function getCookie (name?: string): string | any {
+export function getCookie(name?: string): string | any {
   if (name) {
     const reg = new RegExp(`(^| )${name}=([^;]*)(;|$)`)
     const arr = document.cookie.match(reg)
-    return arr&&arr[2] ? arr[2] : null
+    return arr && arr[2] ? arr[2] : null
   }
   const getAllCookies = []
   if (document.cookie.length) {
     const arrCookie = document
-                      .cookie
-                      .split('; ')
+      .cookie
+      .split('; ')
     for (let k in arrCookie) {
       getAllCookies.push({
         name: `${unescape(arrCookie[k].split('=')[0])}`,
@@ -55,7 +55,7 @@ export function getCookie (name?: string): string | any {
  * @example
  * removeCookie('test')
  */
-export function removeCookie (name: string): any {
+export function removeCookie(name: string): any {
   const date = new Date()
   date.setTime(date.getTime() - 1)
   if (name) {
@@ -79,19 +79,19 @@ export function removeCookie (name: string): any {
  * @example
  * getRandomDataFromArr([1,2,3,4,5,44,3,2,1,9,0,45,678], 5)
  */
-export function randomDataFromArr (arr: any[], num: number): any {
+export function randomDataFromArr(arr: any[], num: number): any {
   const newArr = Array.from(new Set(arr))
   const l = newArr.length
   const resultArr = new Array()
   if (!(num > 0)) {
-    LogUtils.logError(`数量必须大于0`, '[d-utils] StoreUtils randomDataFromArr => ')
+    LogUtils.logError(`数量必须大于0`, '[mUtils] StoreUtils randomDataFromArr => ')
     return
   }
   if (newArr) {
-    for (let i = 0; i < (num > l ? l : num) ; i++) {
+    for (let i = 0; i < (num > l ? l : num); i++) {
       let index = ~~(Math.random() * newArr.length)
       resultArr.push(newArr[index])
-      newArr.splice(index,1)
+      newArr.splice(index, 1)
     }
     return resultArr
   }
@@ -109,7 +109,7 @@ export function randomDataFromArr (arr: any[], num: number): any {
  * @example
  * checkType(localStorage)   // storage
  */
-export function checkType (data: any): string {
+export function checkType(data: any): string {
   let str = Object.prototype.toString.call(data)
   return str.match(/\[object (.*?)\]/)[1].toLowerCase()
 }
@@ -133,21 +133,21 @@ export function checkType (data: any): string {
  * // b: {a: 1, b: 2, c: 3, d: [1, 2]}
  * // 此时修改a.d[0]的值， a对象变化了，b对象没有随之改变
  */
-export function deepClone (obj: any): any {
+export function deepClone(obj: any): any {
   const result: any = {}
   const keys: any = Object.keys(obj)
   let type
   for (let k of keys) {
     type = checkType(obj[k])
     switch (type) {
-    case 'object':
-      result[k] = deepClone(obj[k])
-      break
-    case 'array':
-      result[k] = [].concat(obj[k])
-      break
-    default:
-      result[k] = obj[k]
+      case 'object':
+        result[k] = deepClone(obj[k])
+        break
+      case 'array':
+        result[k] = [].concat(obj[k])
+        break
+      default:
+        result[k] = obj[k]
     }
   }
   return result
@@ -161,7 +161,7 @@ export function deepClone (obj: any): any {
  * extend({a: 1}, {a: 2})   // {a: 1}
  * ⚠️ Object.assign属于浅拷贝,为了后续的操作不影响到之前的数据,最好在extend的第一个参数设置为{}
  */
-export function extend (...arg: any): any {
+export function extend(...arg: any): any {
   return deepClone(Object.assign({}, ...arg))
 }
 
@@ -173,7 +173,7 @@ export function extend (...arg: any): any {
  * // [1, 2, 3, undefined, "4"]
  * uniqueArray([1,2,3,3,,3,3,'4',"4",'4',])
  */
-export function uniqueArray (arr: any[]): any[] {
+export function uniqueArray(arr: any[]): any[] {
   return [...new Set(arr)]
 }
 
@@ -182,7 +182,7 @@ export function uniqueArray (arr: any[]): any[] {
  * @param { File } dataUrl  单个file
  * @return { Blob } 返回新的文件流  可以append到formdata中
  */
-export function dataUrlToBlob (dataUrl: any): Blob {
+export function dataUrlToBlob(dataUrl: any): Blob {
   const arr = dataUrl.split(',')
   const mime = arr[0].match(/:(.*?);/)[1]
   const bstr = atob(arr[1])
@@ -191,7 +191,7 @@ export function dataUrlToBlob (dataUrl: any): Blob {
   while (n--) {
     u8arr[n] = bstr.charCodeAt(n)
   }
-  return new Blob([u8arr], { type: mime })
+  return new Blob([u8arr], {type: mime})
 }
 
 /**
@@ -199,7 +199,7 @@ export function dataUrlToBlob (dataUrl: any): Blob {
  * @param { Array } args 可以是多个数组，数量不限制
  * @return { Array } 返回数组
  */
-export function union (...args: any[]): any[] {
+export function union(...args: any[]): any[] {
   return Array.from(new Set([].concat(...args)))
 }
 
@@ -208,7 +208,7 @@ export function union (...args: any[]): any[] {
  * @param { Array } args 可以是多个数组，两个数组
  * @return { Array } 返回数组
  */
-export function intersection (a: any[], b: any[]): any[] {
+export function intersection(a: any[], b: any[]): any[] {
   const setB = new Set(b)
   return a.filter((item) => {
     return setB.has(item)
@@ -216,15 +216,18 @@ export function intersection (a: any[], b: any[]): any[] {
 }
 
 /**
- * @description 返回两个数组之间的差集
+ * @description 返回两个数组之间的差集 --修改差集
  * @param { Array } args 可以是多个数组，两个数组
  * @return { Array } 返回数组
  */
-export function diffset (a: any[], b: any[]): any[] {
+export function diffset(a: any[], b: any[]): any[] {
   const setB = new Set(b)
-  return a.filter((item) => {
+  const setA = new Set(a)
+  return [...([...a].filter((item) => {
     return !setB.has(item)
-  })
+  })), ...([...b].filter((item) => {
+    return !setA.has(item)
+  }))]
 }
 
 /**
@@ -233,7 +236,7 @@ export function diffset (a: any[], b: any[]): any[] {
  * @param { String | Number | ... } s 目标元素  值类型的元素
  * @return { Number } 数量
  */
-export function calcQuantity (target: any[] | string, s: any) {
+export function calcQuantity(target: any[] | string, s: any) {
   let newTarget = typeof target === 'string' ? target.split('') : target
   return newTarget.reduce((t, c) => {
     return s === c ? t + 1 : t

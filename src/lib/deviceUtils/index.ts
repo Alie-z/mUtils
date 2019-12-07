@@ -57,7 +57,7 @@ export function checkLayoutOrientation (text: string = '请旋转屏幕，以达
   * @param { number }  BaseWidth   基础的设计稿宽度        默认750
   * @param { number }  MaxWidth    移动端最大的比例宽度点   默认document.body.clientWidth
   * @param { boolean } isFullOverMax   超出{MaxWidth}最大宽度的时候是否居中显示(body居中的前提是超出设定的宽度以及isFullOverMax=false) 默认false
-  * @example
+  * @example TODO new rem
   * DeviceUtils.initRem()
   */
 export function initRem (BaseWidth: number = 750, MaxWidth: number = document.body.clientWidth, isFullOverMax: boolean = true): void {

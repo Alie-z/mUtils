@@ -1,6 +1,7 @@
 import { GenericType } from './../type';
 /**
  * @description 浏览器提示
+ * TODO 演示
  * @param { object } options  参数为对象，以下都是对象内的属性配置
  * @property { String } title 浏览器提示的标题  类似标题
  * @property { String } body 浏览器提示的内容主体  类似正文
@@ -40,7 +41,7 @@ export declare function layoutFramework(): void;
  * @param { Boolean } isStrict  true 返回一个字符串的长度，汉字算2个字符长度; false 直接返回长度
  * @return { Number } 返回字符串长度
  * @example
- * const str = 'd-utils库'
+ * const str = 'mUtils库'
  * console(calcStringLength(str))
  * console(calcStringLength(str, true))
  */

@@ -14,7 +14,7 @@ HttpRequestUtils 基于 axios的二次封装
 `isInit`: 属性，是否初始化了，没有让用户执行初始化方法
 
 ## init
-`init`: 方法，初始化axios的配置，包括基本配置，响应拦截，请求拦截等等，详情见 https://github.com/IFmiss/d-utils/blob/typescript/src/lib/httpRequestUtils/axiosConfig.ts
+`init`: 方法，初始化axios的配置，包括基本配置，响应拦截，请求拦截等等
 #### `注意`： init方法只需要调用一次
 #### 参数
 `fn`: 执行axios的方法，方法的参数一个为axios, 一个为HttpRequestUtils类

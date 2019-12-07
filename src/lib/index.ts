@@ -13,8 +13,8 @@ import * as store from './storeUtils/index'
 import * as exp from './expUtils/index'
 // 设备信息类
 import * as device from './deviceUtils/index'
-// 微信相关
-import weixin from './weixinUtils/index'
+// // 微信相关
+// import weixin from './weixinUtils/index'
 // 性能
 import performance from './performanceUtils/index'
 // 打印
@@ -77,7 +77,7 @@ export const UrlUtils = url
 /**
  * 微信相关
  */
-export const WeixinUtils = weixin
+// export const WeixinUtils = weixin
 
 /**
  * 正则相关静态类
@@ -141,7 +141,7 @@ export default {
   /**
    * 微信jssdk 封装的方法
    */
-  WeixinUtils,
+  // WeixinUtils,
   /**
    * 性能相关监控
    */

@@ -19,7 +19,7 @@ export function wait (callback: () => boolean, loopTime: number = 100, timeout: 
       }, loopTime)
 
       const out = setTimeout(() => {
-        LogUtils.logError('', '[d-utils] PromiseUtils wait timeout')
+        LogUtils.logError('', '[mUtils] PromiseUtils wait timeout')
         clearTimeout(t)
         clearTimeout(out)
         reject()

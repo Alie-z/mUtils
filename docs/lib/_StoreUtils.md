@@ -206,7 +206,7 @@ StoreUtils.intersection([1, 2, 3], [2, 3, 4])  // [2, 3]
 ```
 ##### `Demo`:
 ```ts
-StoreUtils.diffset([1, 2, 3], [2, 3, 4])  // [1]
+StoreUtils.diffset([1, 2, 3], [2, 3, 4])  // [1,4]
 ```
 
 ## calcQuantity

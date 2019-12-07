@@ -7,7 +7,7 @@
   * @param { Function } fns 各种方法
   * @example
   * compose(a, b, c)(...query) // a, b, c 皆为方法
-  * 
+  *
   * const testCompose = (name, age) => {
   *   console.log('this name is: ', name)
   *   console.log('this age is: ', age)
@@ -17,12 +17,12 @@
   * const full = (name, age) => {
   *   console.log(`this is full: ${name} & ${age}`)
   * }
-  * 
-  * compose(full, testCompose)('d-utils', 1)
-  * 
-  * // this name is:  d-utils
+  *
+  * compose(full, testCompose)('mUtils', 1)
+  *
+  * // this name is:  mUtils
   * // this age is:  1
-  * // this is full: d-utils & 1
+  * // this is full: mUtils & 1
   */
  export function compose (...fn: Function[]) {
   return function (...args: any) {
@@ -46,7 +46,7 @@
  * const add = curry(addCur, 2)
  * s(1)(2)   // a + b + c 6
  * s(1, 3)   // a + b + c 6
- * 
+ *
  * const reduce = curry(reduceCur)
  * const reduce1 = curry(reduceCur)
  * reduce(1)(2)(3)    // a - b - c -1

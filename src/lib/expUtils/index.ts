@@ -51,7 +51,7 @@ export function isAndroid (): boolean {
 }
 
 /**
- * @description 正则表达式 手机的合法校验 /^1[3-9]\d{9}$/
+ * @description 正则表达式 中国手机的合法校验 /^1[3-9]\d{9}$/
  */
 export const EXP_PHONE_NUM: RegExp = /^1[3-9]\d{9}$/
 
@@ -64,7 +64,7 @@ export const EXP_PHONE_NUM: RegExp = /^1[3-9]\d{9}$/
  */
 export function isPhoneNum (num: string): boolean {
   if (typeof num !== 'string') {
-    LogUtils.logError(`参数需要为string类型，但是发现为: ${typeof num}`, '[d-utils] ExpUtils isPhoneNum error => ')
+    LogUtils.logError(`参数需要为string类型，但是发现为: ${typeof num}`, '[mUtils] ExpUtils isPhoneNum error => ')
     return false
   }
   return EXP_PHONE_NUM.test(num)
@@ -104,7 +104,7 @@ export const EXP_CHINESE: RegExp = /^[\u3220-\uFA29]+$/
 
 /**
  * @description 判断字符串是否都是中文
- * @param { String } str 
+ * @param { String } str
  * @return Boolean
  * @example
  * isChinese('你好，世界')  // false
@@ -137,7 +137,7 @@ export function isObject (o: any): boolean {
   */
 export function isEmptyObject (obj: any): boolean {
   if (!isObject(obj)) {
-    LogUtils.logError('参数不是真正的object对象', '[d-utils] ExpUtils isEmptyObject error => ')
+    LogUtils.logError('参数不是真正的object对象', '[mUtils] ExpUtils isEmptyObject error => ')
     return false
   }
   return Object.keys(obj).length === 0

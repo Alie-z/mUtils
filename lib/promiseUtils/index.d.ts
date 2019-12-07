@@ -16,7 +16,7 @@ export declare function requestOnLoad(requestQueues: Promise<any>[]): Promise<an
  * @param { number } timer  睡眠时长  执行后续的操作
  * @return promise
  */
-export declare function sleep(timer: any): Promise<{}>;
+export declare function sleep(timer: any): Promise<unknown>;
 /**
  * @description async / await 的错误处理   通过err的条件判断或者!res 的条件判断来走后续流程
  * @param { Promise } promise

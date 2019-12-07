@@ -1,7 +1,7 @@
 {
-  "name": "d-utils",
-  "version": "3.0.2",
-  "description": "d-utils",
+  "name": "js-utils-m",
+  "version": "1.0.3",
+  "description": "mUtils",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -27,7 +27,7 @@
     "utils",
     "js-tools"
   ],
-  "author": "daiwei",
+  "author": "Aliez",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.3",

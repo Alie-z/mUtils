@@ -1,9 +1,9 @@
-## 关于d-utils
+## 关于mUtils
 
-[文档地址](https://d-utils.daiwei.site)
+[文档地址](https://alie-z.github.io/mUtils/#/)
 
 #### 产生背景
-这是关于个人日常比较通用代码的收集，方便日后使用，编写文档为了以后方便查阅
+这是关于个人日常比较通用代码的收集
 
 #### 功能描述
 该方法一共包含以下属性，每个属性收集了对应的方法内容
@@ -43,42 +43,36 @@
 
 
 # 快速使用
-#### 安装 （3.0及以上的版本）
-使用npm安装 `d-utils` 依赖
+#### 安装
+使用npm安装 `mUtils` 依赖
 ```bash
-npm i d-utils
+npm i mUtils
 ```
 yarn
 ```hash
-yarn add d-utils
+yarn add mUtils
 ```
 #### 使用
 获取所有方法
 ```js
-import Dutils from 'd-utils'
-Dutils.DomUtils.addClass(document.body, 'd-utils')
+import mUtils from 'mUtils'
+Dutils.DomUtils.addClass(document.body, 'mUtils')
 ```
 按需引入
 ```js
-import { DomUtils, LogUtils } from 'd-utils'
-DomUtils.addClass(document.body, 'd-utils')
-LogUtils.logInfo('d-utils')
+import { DomUtils, LogUtils } from 'mUtils'
+DomUtils.addClass(document.body, 'mUtils')
+LogUtils.logInfo('mUtils')
 ```
 
 直接引用js
 ```html
-<script src="www.daiwei.org/d-utils.js"></script>
+<script src=""></script>
 <script>
-  Dutils.DomUtils.addClass(document.body, 'd-utils')
+  mUtils.DomUtils.addClass(document.body, 'mUtils')
 </script>
 ```
 ```js
-Dutils.DomUtils.cssFilter(document.body, 'grayscale', 1)
+mUtils.DomUtils.cssFilter(document.body, 'grayscale', 1)
 ```
 
-#### 新版本支持部分代码tree-shacking
-可树摇的模块：`decoratorUtils, deviceUtils, domUtils, expUtils, genericUtils, storeUtils, urlUtils`
-**example:**
-```ts
-import { isEmptyStr } from 'd-utils/lib/expUtils'
-```

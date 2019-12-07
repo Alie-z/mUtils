@@ -103,7 +103,7 @@ export declare function union(...args: any[]): any[];
  */
 export declare function intersection(a: any[], b: any[]): any[];
 /**
- * @description 返回两个数组之间的差集
+ * @description 返回两个数组之间的差集 --修改差集
  * @param { Array } args 可以是多个数组，两个数组
  * @return { Array } 返回数组
  */

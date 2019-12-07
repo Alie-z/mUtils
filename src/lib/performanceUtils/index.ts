@@ -83,7 +83,7 @@ export default class PerformanceUtils {
   static logger (): void {
     window.addEventListener('load', () => {
       setTimeout(() => {
-        LogUtils.group('[d-utils] PerformanceUtils logger - list: ', LogUtils.infoColor)
+        LogUtils.group('[mUtils] PerformanceUtils logger - list: ', LogUtils.infoColor)
         LogUtils.logDefault(PerformanceUtils.dnsTime(), 'DNS查询耗时')
         LogUtils.logDefault(PerformanceUtils.loadTime(), '白屏时间')
         LogUtils.logDefault(PerformanceUtils.requestTime(), 'request请求耗时')

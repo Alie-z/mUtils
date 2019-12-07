@@ -15,7 +15,7 @@ DomUtils 静态类 是d-utlis里的一个属性，此属性下包含了已有的
 ```
 ##### `Demo`:
 ```js
-DomUtils.hasClass(document.body, 'd-utils')
+DomUtils.hasClass(document.body, 'mUtils')
 ```
 
 ## addClass
@@ -32,7 +32,7 @@ DomUtils.hasClass(document.body, 'd-utils')
 ```
 ##### `Demo`:
 ```js
-DomUtils.addClass(document.body, 'd-utils')
+DomUtils.addClass(document.body, 'mUtils')
 ```
 
 ## removeClass
@@ -49,7 +49,7 @@ DomUtils.addClass(document.body, 'd-utils')
 ```
 ##### `Demo`:
 ```js
-DomUtils.removeClass(document.body, 'd-utils')
+DomUtils.removeClass(document.body, 'mUtils')
 ```
 
 ## computedStyle

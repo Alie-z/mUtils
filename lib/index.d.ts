@@ -8,7 +8,6 @@ import * as utils from './genericUtils/index';
 import * as store from './storeUtils/index';
 import * as exp from './expUtils/index';
 import * as device from './deviceUtils/index';
-import weixin from './weixinUtils/index';
 import performance from './performanceUtils/index';
 import log from './logUtils/index';
 import * as url from './urlUtils/index';
@@ -53,7 +52,6 @@ export declare const UrlUtils: typeof url;
 /**
  * 微信相关
  */
-export declare const WeixinUtils: typeof weixin;
 /**
  * 正则相关静态类
  */
@@ -110,7 +108,6 @@ declare const _default: {
     /**
      * 微信jssdk 封装的方法
      */
-    WeixinUtils: typeof weixin;
     /**
      * 性能相关监控
      */

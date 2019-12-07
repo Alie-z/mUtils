@@ -1,4 +1,6 @@
-## 关于d-utils
+## 关于mUtils
+
+[文档地址](https://alie-z.github.io/mUtils/#/)
 
 #### 产生背景
 这是关于个人日常比较通用代码的收集，方便日后使用，编写文档为了以后方便查阅
@@ -6,44 +8,77 @@
 #### 功能描述
 该方法一共包含以下属性，每个属性收集了对应的方法内容
 
-- `dom`
+- `DomUtils`
   该属性主要时针对dom元素相关的方法，针对于元素的一些操作
 
-- `store`
-  该属性主要是对于数据的操作
-
-- `exp`
-  该属性是d-js-utlis里的一个属性，此属性包含对于一些字符，或者元素判断是否符合要求
-
-- `utils`
-  其他相关js工具代码
-
-- `device`
+- `DeviceUtils`
   设备相关的检测与方法
 
-## 快速使用
-#### 安装 （3.0及以上的版本）
-使用npm安装 `d-utils` 依赖
+- `StoreUtils`
+  该属性主要是对于数据的操作
+
+- `HttpRequestUtils`
+  基于axios请求的封装
+
+- `ExpUtils`
+  该属性是d-js-utlis里的一个类，此属性包含对于一些字符，或者元素判断是否符合要求
+
+- `GenericUtils`
+  其他相关js工具代码，通用工具类
+
+- `LogUtils`
+  日志相关
+
+- `PerformanceUtils`
+  浏览器性能相关
+
+- `UrlUtils`
+  url地址的一系列操作
+
+- `WeixinUtils`
+  微信jssdk相关的方法
+
+- `ImageUtils`
+  图片合成相关
+
+
+# 快速使用
+#### 安装
+使用npm安装 `mUtils` 依赖
 ```bash
-npm i d-utils
+npm i mUtils
+```
+yarn
+```hash
+yarn add mUtils
+```
+#### 使用
+获取所有方法
+```js
+import mUtils from 'mUtils'
+Dutils.DomUtils.addClass(document.body, 'mUtils')
+```
+按需引入
+```js
+import { DomUtils, LogUtils } from 'mUtils'
+DomUtils.addClass(document.body, 'mUtils')
+LogUtils.logInfo('mUtils')
 ```
 
-使用yarn安装 `d-utils` 依赖
-```bash
-yarn add d-utils
-```
-
-或者直接引用js
+直接引用js
 ```html
-<script src="www.daiwei.org/d-utils"></script>
+<script src=""></script>
 <script>
-  Dutils.dom.addClass(document.body, 'd-utils')
+  mUtils.DomUtils.addClass(document.body, 'mUtils')
 </script>
 ```
-
-#### 使用
-引入`d-utils.js`可直接使用其方法
 ```js
-import Dutils from 'd-utils'
-Dutils.dom.addClass(document.body, 'd-utils')
+mUtils.DomUtils.cssFilter(document.body, 'grayscale', 1)
+```
+
+#### 新版本支持部分代码tree-shacking
+可树摇的模块：`decoratorUtils, deviceUtils, domUtils, expUtils, genericUtils, storeUtils, urlUtils`
+**example:**
+```ts
+import { isEmptyStr } from 'mUtils/lib/expUtils'
 ```
