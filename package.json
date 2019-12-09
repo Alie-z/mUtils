@@ -14,8 +14,8 @@
     "dev": "webpack-dev-server --mode development --progress --colors",
     "watch": "webpack --progress --colors --watch",
     "publish": "npm publish",
-    "patch": "npm version patch -m '[patch]'",
-    "minor": "npm version minor",
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish",
     "publish:major": "npm version major && npm publish"
   },
   "files": [
