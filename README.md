@@ -56,7 +56,7 @@ yarn add js-utils-m
 获取所有方法
 ```js
 import mUtils from 'mUtils'
-utils.DomUtils.addClass(document.body, 'mUtils')
+mUtils.DomUtils.addClass(document.body, 'mUtils')
 ```
 按需引入
 ```js
