@@ -46,33 +46,22 @@
 #### 安装
 使用npm安装 `mUtils` 依赖
 ```bash
-npm i mUtils
+npm i js-utils-m
 ```
 yarn
 ```hash
-yarn add mUtils
+yarn add js-utils-m
 ```
 #### 使用
 获取所有方法
 ```js
 import mUtils from 'mUtils'
-Dutils.DomUtils.addClass(document.body, 'mUtils')
+utils.DomUtils.addClass(document.body, 'mUtils')
 ```
 按需引入
 ```js
 import { DomUtils, LogUtils } from 'mUtils'
 DomUtils.addClass(document.body, 'mUtils')
 LogUtils.logInfo('mUtils')
-```
-
-直接引用js
-```html
-<script src=""></script>
-<script>
-  mUtils.DomUtils.addClass(document.body, 'mUtils')
-</script>
-```
-```js
-mUtils.DomUtils.cssFilter(document.body, 'grayscale', 1)
 ```
 

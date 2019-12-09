@@ -1,6 +1,6 @@
 /**
- * @author ifmiss
- * @version 2.0
+ * @author Aliez
+ * @version 1.0.0
  * @description 关于通用js的收录以及整合方便日后使用
  */
 import * as dom from './domUtils/index';

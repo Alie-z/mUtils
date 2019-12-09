@@ -1,7 +1,7 @@
 import './style.less'
 /**
- * @author ifmiss
- * @version 1.1.0
+ * @author Aliez
+ * @version 1.0.0
  * @description 关于通用js的收录以及整合方便日后使用
  */
 // dom操作
@@ -21,7 +21,7 @@ import {
     PromiseUtils
 } from './lib/index'
 import {axiosConfig} from './lib/httpRequestUtils/axiosConfig'
-import * as Dutils from './lib/index'
+import * as utils from './lib/index'
 // @ts-ignore
 import * as FnUtils from './lib/fnUtils';
 // @ts-ignore

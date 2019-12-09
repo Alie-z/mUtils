@@ -28,7 +28,7 @@ module.exports = {
 		filename: 'mUtils.js',
 		// libraryTarget: importType,
 		libraryTarget: 'var',
-		library: 'Dutils',
+		library: 'utils',
 		libraryExport: 'default'
 	},
 	module: {

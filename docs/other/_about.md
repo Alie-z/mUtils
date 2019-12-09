@@ -38,8 +38,6 @@
 - `UrlUtils`
   url地址的一系列操作
 
-- `WeixinUtils`
-  微信jssdk相关的方法
 
 - `ImageUtils`
   图片合成相关

@@ -35,9 +35,6 @@
 - `UrlUtils`
   url地址的一系列操作
 
-- `WeixinUtils`
-  微信jssdk相关的方法
-
 - `ImageUtils`
   图片合成相关
 
@@ -56,7 +53,7 @@ yarn add mUtils
 获取所有方法
 ```js
 import mUtils from 'mUtils'
-Dutils.DomUtils.addClass(document.body, 'mUtils')
+utils.DomUtils.addClass(document.body, 'mUtils')
 ```
 按需引入
 ```js

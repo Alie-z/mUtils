@@ -4,7 +4,7 @@ declare module 'axios'
 interface Window {
   Notification: any
   __D_UTILS_WX_FIRST_URL_HOOK__: any
-  Dutils: any
+  utils: any
 }
 
 interface Document {
