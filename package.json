@@ -16,7 +16,8 @@
     "publish": "npm publish",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "publish:major": "npm version major && npm publish"
+    "publish:major": "npm version major && npm publish",
+    "docsify": "docsify serve docs"
   },
   "files": [
     "lib/",
@@ -73,6 +74,7 @@
     "eslint-utils": "1.4.1",
     "promise.prototype.finally": "^3.1.0",
     "sha1": "^1.1.1",
+    "vant": "^2.2.16",
     "weixin-js-sdk": "^1.4.0-test"
   }
 }

@@ -3,7 +3,7 @@ import LogUtils from './../logUtils/index'
 require('promise.prototype.finally').shim()
 /**
  * 网页请求的操作
- * axios  TODO NEW AXIOS
+ * axios
  */
 export default class HttpRequestUtils {
   /**
@@ -57,7 +57,7 @@ export default class HttpRequestUtils {
       }
       const getInfo: any = Object.assign({}, {params}, config)
       axios.get(url, getInfo).then((res: any) => {
-        LogUtils.group(`[mUtils] http_request get 请求成功 => ${url}`, LogUtils.successColor)
+        LogUtils.groupCollapsed(`[mUtils] http_request get 请求成功 => ${url}`)
         LogUtils.logInfo(res.data, `http_request response => `)
         LogUtils.logInfo(res.config, `http_request config => `)
         LogUtils.logInfo(res.config.params, `http_request params => `)

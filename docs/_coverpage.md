@@ -1,4 +1,4 @@
-# mUtils <small>1.0.0</small>
+# mUtils <small>1.0.5</small>
 
 > 通用js收集，方便日后使用和查阅
 

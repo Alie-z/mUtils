@@ -1,6 +1,6 @@
 /**
  * 网页请求的操作
- * axios  TODO NEW AXIOS
+ * axios
  */
 export default class HttpRequestUtils {
     /**

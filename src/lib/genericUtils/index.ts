@@ -2,54 +2,7 @@
  * 通用工具类
  */
 import LogUtils from './../logUtils/index'
-import { GenericType } from './../type'
-
-/**
- * @description 浏览器提示
- * TODO 演示
- * @param { object } options  参数为对象，以下都是对象内的属性配置
- * @property { String } title 浏览器提示的标题  类似标题
- * @property { String } body 浏览器提示的内容主体  类似正文
- * @property { String } icon 浏览器提示的图标用于  类似logo效果
- * @property { Function } show 浏览器提示的显示的时候执行的方法
- * @property { Function } click 浏览器提示被鼠标点击执行的方法
- * @returns { Promise } resolve(options) 浏览器可以显示
- * @returns { Promise } reject(options) 浏览器不可以显示
- * @example
- * const data = {
- *  title: 'notification',
- *  body: 'this is a test',
- *  logo: 'http://www.daiwei.org/index/images/logo/dw1.png'
- * }
- * notification(data)
- */
-export function notification (options?: GenericType.INotification):Promise<any> {
-  const defaultV = {
-    title: '疏影横斜水清浅',
-    body: '暗香浮动月黄昏',
-    icon: 'http://www.daiwei.org/index/images/logo/dw1.png',
-    show: () => {},
-    click: () => {}
-  }
-  let newOpt = Object.assign({}, defaultV, options)
-  if (window.Notification && Notification.permission !== 'denied') {
-    Notification.requestPermission(function() {
-      let n = new Notification( newOpt.title, {
-        body: newOpt.body,
-        icon: newOpt.icon,
-      })
-      n.onshow = function() {
-        newOpt.show()
-      }
-      n.onclick = function() {
-        newOpt.click()
-      }
-    })
-    return Promise.resolve(newOpt)
-  } else {
-    return Promise.reject(newOpt)
-  }
-}
+import {GenericType} from './../type'
 
 /**
  * @description 返回rgba随机色
@@ -59,7 +12,7 @@ export function notification (options?: GenericType.INotification):Promise<any> 
  * const color = randomColor(1)
  * console(color)
  */
-export function randomColor (opacity: number = 1): string {
+export function randomColor(opacity: number = 1): string {
   const r = ~~(Math.random() * 256)
   const g = ~~(Math.random() * 256)
   const b = ~~(Math.random() * 256)
@@ -72,8 +25,10 @@ export function randomColor (opacity: number = 1): string {
  * @example
  * showLayoutFramework()
  */
-export function  layoutFramework (): void {
-  Array.from(document.querySelectorAll('*'),function(a: any){  a.style.outline='1px solid #'+(~~(Math.random()*(1<<24))).toString(16) })
+export function layoutFramework(): void {
+  Array.from(document.querySelectorAll('*'), function (a: any) {
+    a.style.outline = '1px solid #' + (~~(Math.random() * (1 << 24))).toString(16)
+  })
 }
 
 /**
@@ -86,7 +41,7 @@ export function  layoutFramework (): void {
  * console(calcStringLength(str))
  * console(calcStringLength(str, true))
  */
-export function calcStringLength (str: string, isStrict?: boolean): number {
+export function calcStringLength(str: string, isStrict?: boolean): number {
   if (typeof str !== 'string') {
     LogUtils.logError(`str must be string but found ${typeof str}`, '[mUtils] GenericUtils calcStringLength error => ')
     return
@@ -118,22 +73,22 @@ export function calcStringLength (str: string, isStrict?: boolean): number {
  * // 3: 去除右边空格
  * strTrim(str, 3)
  */
-export function strTrim (str: string, type: GenericType.StrTrimType = GenericType.StrTrimType.LEFT_RIGHT): string {
+export function strTrim(str: string, type: GenericType.StrTrimType = GenericType.StrTrimType.LEFT_RIGHT): string {
   if (typeof str !== 'string') {
     LogUtils.logError(`str must be string but found ${typeof str}`, '[mUtils] GenericUtils strTrim error => ')
     return
   }
   switch (type) {
-  case 0:
-    return str.replace(/(^\s*)|(\s*$)/g, '')
-  case 1:
-    return str.replace(/\s/g, '')
-  case 2:
-    return str.replace(/(^\s*)/g, '')
-  case 3:
-    return str.replace(/(\s*$)/g, '')
-  default:
-    return str.replace(/(^\s*)|(\s*$)/g, '')
+    case 0:
+      return str.replace(/(^\s*)|(\s*$)/g, '')
+    case 1:
+      return str.replace(/\s/g, '')
+    case 2:
+      return str.replace(/(^\s*)/g, '')
+    case 3:
+      return str.replace(/(\s*$)/g, '')
+    default:
+      return str.replace(/(^\s*)|(\s*$)/g, '')
   }
 }
 
@@ -152,7 +107,7 @@ export function strTrim (str: string, type: GenericType.StrTrimType = GenericTyp
  * console.log('resize-throttle', arg1)
  * }, 1000)
  */
-export function throttle (fn: Function, t = 1000): any {
+export function throttle(fn: Function, t = 1000): any {
   if (typeof fn !== 'function') {
     LogUtils.logError(`第一个参数必须是方法`, '[mUtils] GenericUtils throttle error => ')
     return
@@ -193,7 +148,7 @@ export function throttle (fn: Function, t = 1000): any {
  * console.log('resize-debounce', arg1)
  * }, 1000)
  */
-export function debounce (fn: Function, t: number, immediate: boolean = true): any {
+export function debounce(fn: Function, t: number, immediate: boolean = true): any {
   if (typeof fn !== 'function') {
     LogUtils.logError(`第一个参数必须是方法`, '[mUtils] GenericUtils debounce error => ')
     return
@@ -234,7 +189,7 @@ export function debounce (fn: Function, t: number, immediate: boolean = true): a
  * @example
  * formatDate(`yyyy-MM-dd`, new Date())
  */
-export function formatDate (fmt: string, date: any = new Date()): any { // author: meizz
+export function formatDate(fmt: string, date: any = new Date()): any { // author: meizz
   const newDate = new Date(date)
   let o: any = {
     'M+': newDate.getMonth() + 1, // 月份
@@ -245,9 +200,13 @@ export function formatDate (fmt: string, date: any = new Date()): any { // autho
     'q+': ~~((newDate.getMonth() + 3) / 3), // 季度
     'S': newDate.getMilliseconds() // 毫秒
   }
-  if (/(y+)/.test(fmt)) { fmt = fmt.replace(RegExp.$1, (newDate.getFullYear() + '').substr(4 - RegExp.$1.length)) }
+  if (/(y+)/.test(fmt)) {
+    fmt = fmt.replace(RegExp.$1, (newDate.getFullYear() + '').substr(4 - RegExp.$1.length))
+  }
   for (let k in o) {
-    if (new RegExp('(' + k + ')').test(fmt)) { fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length))) }
+    if (new RegExp('(' + k + ')').test(fmt)) {
+      fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)))
+    }
   }
   return fmt
 }
@@ -258,7 +217,7 @@ export function formatDate (fmt: string, date: any = new Date()): any { // autho
  * @example
  * copyCode('hello world')
  */
-export function copyCode (str: string): void {
+export function copyCode(str: string): void {
   const textArea = document.createElement('textarea')
   textArea.style.cssText = 'position: absolute; top: -1000px; right: -1000px; z-index: -1000;'
   document.body.appendChild(textArea)
@@ -273,7 +232,7 @@ export function copyCode (str: string): void {
  * @param str 字符串
  * @return str base64 字符串
  */
-export function base64Encode (str: string): string {
+export function base64Encode(str: string): string {
   return window.btoa(str)
 }
 
@@ -282,6 +241,6 @@ export function base64Encode (str: string): string {
  * @param str base64字符串
  * @return 返回str字符串
  */
-export function base64Decode (str: string): string {
+export function base64Decode(str: string): string {
   return window.atob(decodeURIComponent(str))
 }

@@ -3,11 +3,17 @@
 [文档地址](https://alie-z.github.io/mUtils/#/)
 
 #### 产生背景
-这是关于个人日常比较通用代码的收集，方便日后使用，编写文档为了以后方便查阅
+这是关于个人日常比较通用代码的收集
 
 #### 功能描述
 该方法一共包含以下属性，每个属性收集了对应的方法内容
 
+- `RequestUtils`
+  基于axios请求的二次封装
+  
+- `FeedbackUtils`
+  js反馈类的封装
+  
 - `DomUtils`
   该属性主要时针对dom元素相关的方法，针对于元素的一些操作
 
@@ -16,9 +22,6 @@
 
 - `StoreUtils`
   该属性主要是对于数据的操作
-
-- `HttpRequestUtils`
-  基于axios请求的封装
 
 - `ExpUtils`
   该属性是d-js-utlis里的一个类，此属性包含对于一些字符，或者元素判断是否符合要求
@@ -43,28 +46,28 @@
 #### 安装
 使用npm安装 `mUtils` 依赖
 ```bash
-npm i mUtils
+npm i js-utils-m
 ```
 yarn
 ```hash
-yarn add mUtils
+yarn add js-utils-m
 ```
 #### 使用
 获取所有方法
 ```js
-import mUtils from 'mUtils'
-mUtils.DomUtils.addClass(document.body, 'mUtils')
+import mUtils from 'js-utils-m'
+mUtils.FeedbackUtils.Toast('Hello,World', 5000)
 ```
 按需引入
 ```js
-import { DomUtils, LogUtils } from 'mUtils'
-DomUtils.addClass(document.body, 'mUtils')
+import { FeedbackUtils, LogUtils } from 'js-utils-m'
+FeedbackUtils.Toast('Hello,World', 5000)
 LogUtils.logInfo('mUtils')
 ```
-
-#### 新版本支持部分代码tree-shacking
-可树摇的模块：`decoratorUtils, deviceUtils, domUtils, expUtils, genericUtils, storeUtils, urlUtils`
-**example:**
-```ts
-import { isEmptyStr } from 'mUtils/lib/expUtils'
+直接引用js
+```html
+<script src="http://static.huadong.uniqorn.com.cn/js/utils/mUtils.js"></script>
+<script>
+  mUtils.FeedbackUtils.Toast('Hello,World', 5000)
+</script>
 ```

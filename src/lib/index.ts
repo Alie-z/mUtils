@@ -33,6 +33,10 @@ import event from './eventUtils/index'
 import * as promise from './promiseUtils/index'
 // function
 import * as fn from './fnUtils/index'
+// Http
+import requestUtils from './requestUtils/http'
+// 反馈组件
+import * as feedbackUtils from './feedbackUtils/index'
 
 /**
  * Dom相关静态类
@@ -87,7 +91,7 @@ export const ExpUtils = exp
 /**
  * axios二次封装
  */
-export const HttpRequestUtils = http
+// export const HttpRequestUtils = http
 
 /**
  * 图片合成类
@@ -108,6 +112,15 @@ export const PromiseUtils = promise
  * 函数相关
  */
 export const FnUtils = fn
+/**
+ * new request
+ */
+export const RequestUtils = requestUtils
+
+/**
+ * Toast
+ */
+export const FeedbackUtils = feedbackUtils
 
 export default {
   /**
@@ -153,7 +166,7 @@ export default {
   /**
    * 基于axios的请求相关
    */
-  HttpRequestUtils,
+  // HttpRequestUtils,
   /**
    * 图片合成相关
    */
@@ -169,5 +182,13 @@ export default {
   /**
    * 方法的包装
    */
-  FnUtils
+  FnUtils,
+  /**
+   * axios二次封装
+   */
+  RequestUtils,
+  /**
+   * 反馈组件封装
+   */
+  FeedbackUtils,
 }

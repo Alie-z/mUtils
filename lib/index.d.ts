@@ -11,12 +11,13 @@ import * as device from './deviceUtils/index';
 import performance from './performanceUtils/index';
 import log from './logUtils/index';
 import * as url from './urlUtils/index';
-import http from './httpRequestUtils/index';
 import img from './imageUtils/index';
 import * as decorator from './decoratorUtils/index';
 import event from './eventUtils/index';
 import * as promise from './promiseUtils/index';
 import * as fn from './fnUtils/index';
+import requestUtils from './requestUtils/http';
+import * as feedbackUtils from './feedbackUtils/index';
 /**
  * Dom相关静态类
  */
@@ -59,7 +60,6 @@ export declare const ExpUtils: typeof exp;
 /**
  * axios二次封装
  */
-export declare const HttpRequestUtils: typeof http;
 /**
  * 图片合成类
  */
@@ -76,6 +76,14 @@ export declare const PromiseUtils: typeof promise;
  * 函数相关
  */
 export declare const FnUtils: typeof fn;
+/**
+ * new request
+ */
+export declare const RequestUtils: typeof requestUtils;
+/**
+ * Toast
+ */
+export declare const FeedbackUtils: typeof feedbackUtils;
 declare const _default: {
     /**
      * 装饰器
@@ -119,7 +127,6 @@ declare const _default: {
     /**
      * 基于axios的请求相关
      */
-    HttpRequestUtils: typeof http;
     /**
      * 图片合成相关
      */
@@ -136,5 +143,13 @@ declare const _default: {
      * 方法的包装
      */
     FnUtils: typeof fn;
+    /**
+     * axios二次封装
+     */
+    RequestUtils: typeof requestUtils;
+    /**
+     * 反馈组件封装
+     */
+    FeedbackUtils: typeof feedbackUtils;
 };
 export default _default;

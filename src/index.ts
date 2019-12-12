@@ -1,84 +1,66 @@
 import './style.less'
 /**
  * @author Aliez
- * @version 1.0.0
+ * @version 1.0.5
  * @description 关于通用js的收录以及整合方便日后使用
  */
+import Api from "./lib/requestUtils/http";
+import {notification} from './lib/feedbackUtils/index'
 // dom操作
 // import { DomUtils } from './../dist/lib/index'
-// import EventUtils from './lib/eventUtils/index'
+import EventUtils from './lib/eventUtils/index'
 import {DeviceUtils} from './lib/index'
 import {StoreUtils} from './lib/index'
 import {
-    LogUtils,
-    GenericUtils,
-    UrlUtils,
-    // WeixinUtils,
-    ExpUtils,
-    HttpRequestUtils,
-    ImageUtils,
-    PerformanceUtils,
-    PromiseUtils
+  LogUtils,
+  GenericUtils,
+  UrlUtils,
+  ExpUtils,
+  ImageUtils,
+  PerformanceUtils,
+  PromiseUtils,
+  RequestUtils,
+  FeedbackUtils
 } from './lib/index'
-import {axiosConfig} from './lib/httpRequestUtils/axiosConfig'
-import * as utils from './lib/index'
-// @ts-ignore
-import * as FnUtils from './lib/fnUtils';
-// @ts-ignore
-import * as DomUtils from './lib/domUtils';
-import {rejects} from 'assert';
-// @ts-ignore
-import EventUtils from "./lib/eventUtils";
+import * as FnUtils from './lib/fnUtils/index';
+import * as DomUtils from './lib/domUtils/index';
 import PaiXu from './test/paixu'
 import ErChaShu from './test/erchashu'
 import {combineArray, lengthOfLongestSubstring} from './test/arr'
 
+
+FeedbackUtils.Toast('toast')
+const params = {
+  baseURL: 'https://www.uniqorn.vip/api/',
+}
+const API = new Api(params)
+
+async function Apidemo() {
+  const res = await API._getDetail({id: '74501'})
+}
+
+Apidemo()
+
 EventUtils.on('axios-loading', (res) => {
-    alert(1)
+  alert(1)
 })
 PerformanceUtils.logger()
-HttpRequestUtils.init(axiosConfig)
-HttpRequestUtils.get('https://www.daiwei.site/php/web_v2_api/home.php', {
-    inAjax: 1,
-    do: 'getImageByBingJson'
-})
+
 
 let t = 0
 setTimeout(() => {
-    t = 1
+  t = 1
 }, 5000)
 
 const log = function (e) {
-    console.log('clickHandler', e)
+  console.log('clickHandler', e)
 }
 
 const clickHandler = GenericUtils.debounce(function (e) {
-    log(e)
+  log(e)
 }, 1000)
 
 document.getElementById('disc').onclick = clickHandler
-
-async function aaa() {
-    console.log('start')
-    // const [err, res] = await PromiseUtils.wrap(PromiseUtils.wait(() => {
-    //   console.log('t', t)
-    //   return t > 0
-    // }, 1000, 500).then(() => {
-    //   console.log('end')
-    // }).catch(e => {
-    //   console.log(e)
-    // }))
-    // console.log(err, res)
-    await PromiseUtils.sleep(3000)
-    const [err, res] = await PromiseUtils.wrap(HttpRequestUtils.get('https://www.daiwei.site/php/web_v2_api/home.php', {
-        inAjax: 1,
-        do: 'getImageByBingJson'
-    }))
-    console.log(err, res)
-    console.log('this is realy end')
-}
-
-aaa()
 
 
 DeviceUtils.initRem()
@@ -87,48 +69,16 @@ console.log('-----------------------')
 console.log(GenericUtils.calcStringLength('☮✌☏1{', true))
 
 async function bbb() {
-    await PromiseUtils.sleep(5000)
-    console.log('bbbbbbbbbbbbbbbbbb')
+  await PromiseUtils.sleep(5000)
+  console.log('bbbbbbbbbbbbbbbbbb')
 }
 
 bbb()
 
-DomUtils.cssFilter(document.body, 'grayscale', '1')
+DomUtils.cssFilter(document.body, 'grayscale', '.1')
 
 console.log(GenericUtils.base64Encode('hello world!'))
 console.log(GenericUtils.base64Decode('aGVsbG8gd29ybGQh'))
-
-// WeixinUtils.initWxConfig({
-//     appId: '11111',
-//     timestamp: new Date().getTime(),
-//     nonceStr: '11111',
-//     signature: '111111',
-//     jsApiList: ['hideMenuItems', 'showMenuItems']
-// })
-
-
-let Person = {
-    name: 'Tom',
-    say(self = '1111', other) {
-        console.log('Person.say')
-        console.log(`我叫${this.name}---${self}---${other}`)
-    }
-}
-// Person.say()
-
-let Student = {
-    firstName: 'dai',
-    lastName: 'wei',
-    getName() {
-        console.log(`FullName: ${this.firstName} -- ${this.lastName}`)
-    }
-}
-
-let Person1 = {
-    name: 'Tom 1',
-    firstName: 'd',
-    lastName: 'w',
-}
 
 
 LogUtils.logDefault(UrlUtils.stringifyUrl({a: 1}))
@@ -145,8 +95,8 @@ LogUtils.logInfo(StoreUtils.uniqueArray([1, 2, 3, 4, 5, 3, 2, 1, 0]))
 
 LogUtils.logInfo(GenericUtils.strTrim(' asda '))
 
-// GenericUtils.notification()
-// FnUtils.compose(alert, GenericUtils.strTrim)(1)
+notification()
+FnUtils.compose(alert, GenericUtils.strTrim)(1)
 
 const arr = [1, 3, 44, 22, 0, -1, 9, 56, 99, 87, -5]
 
@@ -193,9 +143,9 @@ console.log('s.frontEach(2)', s.frontEach(s.root))
 s.showTree()
 
 const a = x => y => z => {
-    console.log(x)
-    console.log(y)
-    console.log(z)
+  console.log(x)
+  console.log(y)
+  console.log(z)
 }
 a(1)(2)(3)
 
@@ -206,14 +156,14 @@ LogUtils.logInfo(lengthOfLongestSubstring("vvvcc"), 'lengthOfLongestSubstring')
 LogUtils.logInfo(StoreUtils.union([1, 2, 3], [2, 3, 4], 4, '3', '3', ['3']), '----------------')
 
 LogUtils.logInfo(StoreUtils.intersection([2], [2, 3, 4]))
-LogUtils.logInfo(StoreUtils.diffset([1, 2, 3], [2, 3, 4]),'差集----')
+LogUtils.logInfo(StoreUtils.diffset([1, 2, 3], [2, 3, 4]), '差集----')
 
 function add(a) {
-    return function (b) {
-        return function (c) {
-            return a + b + c
-        }
+  return function (b) {
+    return function (c) {
+      return a + b + c
     }
+  }
 }
 
 console.log(add(2)(3)(4))
@@ -224,19 +174,19 @@ LogUtils.logInfo(StoreUtils.calcQuantity('1234443452134', '1'), 'calcCountInArra
 
 
 const testCompose = (name, age) => {
-    console.log('this name is: ', name)
-    console.log('this age is: ', age)
-    return [name, age]
+  console.log('this name is: ', name)
+  console.log('this age is: ', age)
+  return [name, age]
 }
 const full = (name, age) => {
-    console.log(`this is full: ${name} & ${age}`)
+  console.log(`this is full: ${name} & ${age}`)
 }
 
 FnUtils.compose(full, testCompose)('mUtils', 1)
 
 console.log('----------split----------')
 const testCur = function (a, b, c) {
-    console.log('a - b - c', a - b - c)
+  console.log('a - b - c', a - b - c)
 }
 // const c = FnUtils.curry(testCur, 4)
 const c = FnUtils.curry(testCur)

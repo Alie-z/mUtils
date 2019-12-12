@@ -2,7 +2,7 @@ const webpack = require('webpack') 	// 用于访问内置插件
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const WebpackPromptPlugin = require('@dw/webpack-prompt-plugin')
 // const nodeExternals = require('webpack-node-externals');
 const importType = 'umd'
@@ -18,9 +18,9 @@ const resolve = function (dir) {
 module.exports = {
   entry: {
     // 这里只是编译的时候用的
-    index: './src/index.ts'
-    // index: './lib/index.js'
-    // index: './src/lib/index.ts'
+    // index: './src/index.ts'
+    // index: './lib/index.ts'
+    index: './src/lib/index.ts'
   },
   output: {
     path: path.resolve(__dirname, 'mUtils'),
@@ -28,8 +28,8 @@ module.exports = {
     filename: 'mUtils.js',
     libraryTarget: importType,
     // libraryTarget: 'var',
-    library: 'mjsutils',
-    libraryExport: 'default'
+    library: 'mUtils',
+    // libraryExport: 'default'
   },
   module: {
     rules: [
@@ -116,7 +116,7 @@ module.exports = {
     }),
     extractSass,
     new CleanWebpackPlugin({
-    	verbose: false
+      verbose: false
     }),
     new WebpackPromptPlugin()
   ],

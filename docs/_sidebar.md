@@ -9,7 +9,7 @@
   * [ExpUtils](/lib/_ExpUtils.md)
   * [GenericUtils](/lib/_GenericUtils.md)
   * [DeviceUtils](/lib/_DeviceUtils.md)
-  * [HttpRequestUtils](/lib/_HttpRequestUtils.md)
+  * [RequestUtils](/lib/_RequestUtils.md)
   * [LogUtils](/lib/_LogUtils.md)
   * [PerformanceUtils](/lib/_PerformanceUtils.md)
   * [UrlUtils](/lib/_UrlUtils.md)

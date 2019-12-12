@@ -1,25 +1,5 @@
 import { GenericType } from './../type';
 /**
- * @description 浏览器提示
- * TODO 演示
- * @param { object } options  参数为对象，以下都是对象内的属性配置
- * @property { String } title 浏览器提示的标题  类似标题
- * @property { String } body 浏览器提示的内容主体  类似正文
- * @property { String } icon 浏览器提示的图标用于  类似logo效果
- * @property { Function } show 浏览器提示的显示的时候执行的方法
- * @property { Function } click 浏览器提示被鼠标点击执行的方法
- * @returns { Promise } resolve(options) 浏览器可以显示
- * @returns { Promise } reject(options) 浏览器不可以显示
- * @example
- * const data = {
- *  title: 'notification',
- *  body: 'this is a test',
- *  logo: 'http://www.daiwei.org/index/images/logo/dw1.png'
- * }
- * notification(data)
- */
-export declare function notification(options?: GenericType.INotification): Promise<any>;
-/**
  * @description 返回rgba随机色
  * @param { Number } opacity    透明度 0～1之间
  * @return { String } rgba色值

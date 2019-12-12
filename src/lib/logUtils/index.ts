@@ -118,7 +118,7 @@ export default class LogUtils {
    *  colors: ['#fa709a', '#fee140', '#ffb199']
    * })
    */
-  static logBeauty (text: string = '未曾遗忘的青春', options?: LogUtilsType.ILogBeautyOptions): void {
+  static logBeauty (text: string = '疏影横斜水清浅', options?: LogUtilsType.ILogBeautyOptions): void {
     if (options && typeof options !== 'object') throw new TypeError(`options is an object, but found ${typeof options}`)
     let data = {
       isMax: false,
