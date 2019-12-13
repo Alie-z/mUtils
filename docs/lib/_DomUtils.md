@@ -1,5 +1,5 @@
 # DomUtils 静态类
-DomUtils 静态类 是d-utlis里的一个属性，此属性下包含了已有的和dom相关的类的集合
+DomUtils 静态类 是mUtlis里的一个属性，此属性下包含了已有的和dom相关的类的集合
 
 ## hasClass
 `hasClass`是判断元素中是否存在某一个className

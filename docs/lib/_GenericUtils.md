@@ -1,38 +1,6 @@
 # GenericUtils 类
 GenericUtils 通用工具类
 
-## notification
-`notification`浏览器notification全局提示，并返回一个Promise
-#### 参数
-  - `options` 参数内容
-  - `options.title`标题
-  - `options.body`正文
-  - `options.icon`logo
-  - `options.show` 方法 显示时候触发的回调
-  - `options.click`方法 点击时触发的回调
-```js
-/**
- * 浏览器提示
- * @param { Object } options
- * @param { String } options.title 浏览器提示的标题  类似标题
- * @param { String } options.body 浏览器提示的内容主体  类似正文
- * @param { String } options.icon 浏览器提示的图标用于  类似logo效果
- * @param { Function } options.show 浏览器提示的显示的时候执行的方法
- * @param { Function } options.click 浏览器提示被鼠标点击执行的方法
- * @returns { Promise } resolve(options) 浏览器可以显示
- * @returns { Promise } reject(options) 浏览器不可以显示
- */
-```
-##### `Demo`:
-```js
-  const data = {
-      title: 'notification',
-      body: 'this is a test',
-      logo: 'http://www.daiwei.org/index/images/logo/dw1.png'
-  }
-GenericUtils.notification(data)
-```
-
 ## randomColor
 `randomColor`随机生成一个rgba的颜色值
 #### 参数
@@ -46,7 +14,7 @@ GenericUtils.notification(data)
 ```
 ##### `Demo`:
 ```js
-const color GenericUtils.randomColor(1)
+const color = GenericUtils.randomColor(1)
 console.log(color)
 ```
 

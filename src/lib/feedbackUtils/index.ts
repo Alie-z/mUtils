@@ -6,7 +6,7 @@ import {addClass} from './../domUtils/index'
 
 /**
  * @description 浏览器提示
- * @param { object } options  参数为对象，以下都是对象内的属性配置
+ * @param { object } options?  参数为对象，以下都是对象内的属性配置
  * @property { String } title 浏览器提示的标题  类似标题
  * @property { String } body 浏览器提示的内容主体  类似正文
  * @property { String } icon 浏览器提示的图标用于  类似logo效果
@@ -18,15 +18,15 @@ import {addClass} from './../domUtils/index'
  * const data = {
  *  title: 'notification',
  *  body: 'this is a test',
- *  logo: 'http://www.daiwei.org/index/images/logo/dw1.png'
+ *  logo: 'http://static.huadong.uniqorn.com.cn/js/utils/5deb72135a682e007c405d87.png'
  * }
  * notification(data)
  */
-export function notification(options?: GenericType.INotification): Promise<any> {
+export function notification(options?: { icon: string; title: string; body: string; click: () => void }): Promise<any> {
   const defaultV = {
     title: '疏影横斜水清浅',
     body: '暗香浮动月黄昏',
-    icon: 'http://www.daiwei.org/index/images/logo/dw1.png',
+    icon: 'http://static.huadong.uniqorn.com.cn/js/utils/5deb72135a682e007c405d87.png',
     show: () => {
     },
     click: () => {

@@ -13,7 +13,7 @@ url的操作，浏览器相关
 ```
 #### `Demo:`
 ```js
-UrlUtils.parseUrl('http://www.daiwei.org/?a=1&b=2')
+UrlUtils.parseUrl('https://www.baidu.com/baidu?isource=infinity&iname=baidu&itype=web&tn=02003390_42_hao_pg&ie=utf-8&wd=hello')
 ```
 
 ## stringifyUrl

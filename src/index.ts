@@ -70,7 +70,15 @@ console.log(GenericUtils.calcStringLength('☮✌☏1{', true))
 
 async function bbb() {
   await PromiseUtils.sleep(5000)
-  console.log('bbbbbbbbbbbbbbbbbb')
+  const notificationData = {
+    title: '疏影横斜水清浅',
+    body: '暗香浮动月黄昏',
+    icon: 'http://static.huadong.uniqorn.com.cn/js/utils/5deb72135a682e007c405d87.png',
+    click: () => {
+      window.open('https://alie-z.github.io/mUtils/#/lib/_StoreUtils')
+    }
+  }
+  notification(notificationData)
 }
 
 bbb()
@@ -87,7 +95,7 @@ LogUtils.logDefault(UrlUtils.stringifyUrl({a: 1, b: '2'}))
 LogUtils.logDefault(UrlUtils.stringifyUrl({a: 1, b: '2', c: 3, d: 'c'}))
 LogUtils.logDefault(UrlUtils.stringifyUrl({a: 1, b: '2', c: 3, d: 'c', e: 'f'}))
 
-LogUtils.logDefault(UrlUtils.parseUrl('https://www.daiwei.site/?a=1&b=2&url=a.html?b=1&c=1'))
+LogUtils.logDefault(UrlUtils.parseUrl('https://www.baidu.com/baidu?isource=infinity&iname=baidu&itype=web&tn=02003390_42_hao_pg&ie=utf-8&wd=hello'))
 
 LogUtils.logInfo(UrlUtils.deleteUrlParam(['code', 'name']))
 
@@ -95,7 +103,6 @@ LogUtils.logInfo(StoreUtils.uniqueArray([1, 2, 3, 4, 5, 3, 2, 1, 0]))
 
 LogUtils.logInfo(GenericUtils.strTrim(' asda '))
 
-notification()
 FnUtils.compose(alert, GenericUtils.strTrim)(1)
 
 const arr = [1, 3, 44, 22, 0, -1, 9, 56, 99, 87, -5]

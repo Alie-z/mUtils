@@ -1,5 +1,5 @@
 # ExpUtils 静态类
-ExpUtils 是d-utlis里的一个属性，此属性包含对于一些字符，或者元素判断是否符合要求
+ExpUtils 是mUtlis里的一个属性，此属性包含对于一些字符，或者元素判断是否符合要求
 
 ## ua
 `ua`: 属性， window.navigator.userAgent

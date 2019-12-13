@@ -6,7 +6,7 @@
  * 获取url地址的参数信转化成键值对的对象格式
  * @param { string } url 解析的url地址
  * @example
- * UrlUtils.parseUrl('http://www.daiwei.org/?a=1&b=2')
+ * UrlUtils.parseUrl('https://www.baidu.com/baidu?isource=infinity&iname=baidu&itype=web&tn=02003390_42_hao_pg&ie=utf-8&wd=hello')
  */
 export function parseUrl (url: string = window.location.search): any {
   const newUrl: string = url.slice(url.indexOf('?'))
