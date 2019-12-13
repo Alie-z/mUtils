@@ -20,9 +20,9 @@ RequestUtils 基于 axios的二次封装
 #### `Demo 以vue中使用为例`:
 ##### 1. /src/api/api.js
 ```javascript
-import {FeedbackUtils} from 'js-utils-m'
+import {RequestUtils} from 'js-utils-m'
 
-class Api extends FeedbackUtils {
+class Api extends RequestUtils {
   constructor (params) {
     super(params)
   }
