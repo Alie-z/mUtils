@@ -1,7 +1,7 @@
 import Fetch from './index'
 
 class Api extends Fetch {
-  constructor (params) {
+  constructor(params) {
     super(params)
   }
 
@@ -10,13 +10,23 @@ class Api extends Fetch {
    * @returns {*}
    * @private
    */
-  _getDetail (data) {
+  _getDetail(data) {
     // @ts-ignore
     return this._init('duanzi/detail', data)
   }
 
+  /**
+   * ins
+   * @returns {*}
+   * @private
+   */
+  _getIns(data) {
+    // @ts-ignore
+    return this._init('https://www.instagram.com/captainmiao/', data)
+  }
 
-  _init (url, data, method, isNoLoading = true) {
+
+  _init(url, data, method, isNoLoading = true) {
     const params = {
       url,
       data,
