@@ -1,5 +1,5 @@
 # flexible
-flexible 移动端rem适配方案
+移动端rem适配方案
 
 1. $ npm install postcss-pxtorem -S
 2. import 'js-utils-m/lib/flexible'

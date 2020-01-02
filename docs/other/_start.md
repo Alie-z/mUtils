@@ -9,7 +9,7 @@
 该方法一共包含以下属性，每个属性收集了对应的方法内容
 
 - `flexible`
-  flexible 移动端rem适配方案
+  移动端rem适配方案
 
 - `RequestUtils`
   基于axios请求的二次封装
