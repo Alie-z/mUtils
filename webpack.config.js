@@ -18,9 +18,9 @@ const resolve = function (dir) {
 module.exports = {
   entry: {
     // 这里只是编译的时候用的
-    index: './src/index.ts'
+    // index: './src/index.ts'
     // index: './lib/index.ts'
-    // index: './src/lib/index.ts'
+    index: './src/lib/index.ts'
   },
   output: {
     path: path.resolve(__dirname, 'mUtils'),
