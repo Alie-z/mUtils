@@ -19,6 +19,14 @@
     "publish:major": "npm version major && npm publish",
     "docsify": "docsify serve docs"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alie-z/mUtils"
+  },
+  "bugs": {
+    "url": "https://github.com/Alie-z/mUtils/issues",
+    "email": "17512018620@163.com"
+  },
   "files": [
     "lib/",
     "README.md"
