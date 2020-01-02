@@ -1,9 +1,17 @@
 # 更新内容
+
+### 1.0.7
+  - `2020-01-02` 新增flexible 移动端rem适配方案
+
+
+### 1.0.6
+  - `2020-01-02` 新增flexible 移动端rem适配方案
+
 ### 1.0.5
   - `2019-12-13` 更新docs 使用文档
   - `2019-12-12` 新增 [RequestUtils](/lib/_RequestUtils.md) 方法
   - `2019-12-11` 新增 [FeedbackUtils](/lib/_FeedbackUtils.md) 方法
-   - notification、Loading、Toast
+  - notification、Loading、Toast
 
 ### 1.0.4 ˇ
   - 功能list
