@@ -16,7 +16,7 @@ import * as decorator from './decoratorUtils/index';
 import event from './eventUtils/index';
 import * as promise from './promiseUtils/index';
 import * as fn from './fnUtils/index';
-import requestUtils from './requestUtils/http';
+import requestUtils from './requestUtils/index';
 import * as feedbackUtils from './feedbackUtils/index';
 /**
  * Dom相关静态类

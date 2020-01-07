@@ -13,6 +13,7 @@
 ```js
 /**
  * 浏览器提示
+ *Chrome上对http协议默认Notification.permission = 'denied'，想要推送消息就要使用https协议！ 调试的时候使用http://localhost/XXXX
  * @param { Object } options
  * @param { String } options.title 浏览器提示的标题  类似标题
  * @param { String } options.body 浏览器提示的内容主体  类似正文

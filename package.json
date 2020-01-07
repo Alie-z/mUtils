@@ -1,6 +1,6 @@
 {
   "name": "js-utils-m",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "mUtils",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

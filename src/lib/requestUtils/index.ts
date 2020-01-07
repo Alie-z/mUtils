@@ -13,9 +13,10 @@ import {Toast, Loading} from './../feedbackUtils/index'
  *  @param { function }loadingEnd 自定义loading 结束 loadingStar传了的情况必需传
  *  如过cookie里存了token 会自动获取并加入到请求参数中
  */
-class Http {
+
+export default abstract class Http {
   private header: any | HTMLElement;
-  private readonly timeout: number | any | ProgressEvent<XMLHttpRequestEventTarget>;
+  private readonly timeout: number | any | ProgressEvent;
   private readonly baseURL: string;
   private readonly loadingStar: any;
   private readonly loadingEnd: any;
@@ -160,15 +161,18 @@ class Http {
    * @param isNoLoading 是否需要loading
    * @return { Promise }
    */
-  $http(params: any): Promise<any> {
+  public $http(params: any): Promise<any> {
     const service = this.createService()
     const token = getCookie('token')
-    if (token) params.data.token = token
+    if (token) {
+      params.data.token = token
+    }
 
     return new Promise((resolve, reject) => {
+      // 需要loading 并且 配置自定义loading 则执行自定义，需要loading 未配置自定义 执行默认loading 否则不执行
       !params.isNoLoading && this.loadingStar ?
         this.loadingStar() :
-        Loading.show({
+        !params.isNoLoading && Loading.show({
           message: '加载中...'
         })
       service({
@@ -189,10 +193,9 @@ class Http {
         LogUtils.groupEnd()
         reject(e)
       }).finally(() => {
-        this.loadingEnd ? this.loadingEnd() : Loading.clear()
+        !params.isNoLoading && this.loadingEnd ? this.loadingEnd() : !params.isNoLoading && Loading.clear()
       })
     })
   }
 }
 
-export default Http

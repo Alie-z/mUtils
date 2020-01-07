@@ -20,13 +20,22 @@ RequestUtils 基于 axios的二次封装
 #### `Demo 以vue中使用为例`:
 ##### 1. /src/api/api.js
 ```javascript
-import {RequestUtils} from 'js-utils-m'
+import { Toast } from 'vant'
+import Axios from 'js-utils-m/lib/requestUtils'
 
-class Api extends RequestUtils {
-  constructor (params) {
-    super(params)
-  }
+const params = {
+  baseURL: 'https://www.xxxx.com/api/',
+  timeout: 6000,
+  loadingStar: Toast.loading({   //自定义loading
+    duration: 0,
+    forbidClick: true,
+    message: 'loading...'
+  }),
+  loadingEnd: Toast.clear()
+}
+const newHttp = new Axios(params)
 
+class Api {
   /**
    * 获取详情
    * @param { object } 参数合集
@@ -54,7 +63,7 @@ class Api extends RequestUtils {
       method,
       isNoLoading,
     }
-    return this.$http(params)
+    return newHttp.$http(params)
   }
 }
 
@@ -63,19 +72,8 @@ export default Api
 ```
 ##### 2. /src/main.js
 ```javascript
-import { Toast } from 'vant'
 import Api from './api/api'
-const params = {
-  baseURL: 'https://www.xxxx.com/api/',
-  timeout: 6000,
-  loadingStar: Toast.loading({   //自定义loading
-    duration: 0,
-    forbidClick: true,
-    message: 'loading...'
-  }),
-  loadingEnd: Toast.clear()
-}
-Vue.prototype.API = new Api(params)
+Vue.prototype.API = new Api()
 ```
 
 ##### 2. /src/view/request.vue
@@ -92,7 +90,7 @@ Vue.prototype.API = new Api(params)
     },
     methods: {
       async _renderVideoInfo () {
-        let res = await this.ApiN._getVideoInfo({ videoId: this.videoId })
+        let res = await this.API._getVideoInfo({ videoId: this.videoId })
         console.log(res)
       }
   }

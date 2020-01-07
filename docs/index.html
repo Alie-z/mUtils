@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>javascript 通用方法 | mUtils</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="description" content="mUtils">
   <link rel="shortcut icon" href="./favicon.ico">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" title="vue">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css" title="dark" disabled>
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css" title="buble" disabled>
@@ -15,78 +16,101 @@
   <!-- gitalk -->
   <!-- <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css"> -->
   <!-- <link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css" > -->
+  <style>
+    .iframeWrap {
+      position: fixed;
+      top: 90px;
+      right: 30px;
+      z-index: 1;
+      box-sizing: border-box;
+      width: 360px;
+      min-width: 360px;
+      overflow: hidden;
+      background: #fafafa;
+      border-radius: 6px;
+      box-shadow: #ebedf0 0 4px 12px;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-  <div id="app">
-    加载中
-  </div>
-  <script>
-    window.$docsify = {
-      coverpage: true,
-      name: 'mUtils',
-      loadSidebar: true,
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md'
+<div id="app">
+  加载中
+</div>
+<div class="iframeWrap">
+  <iframe src="http://localhost:8080/" frameborder="0" scrolling="no" style="height: 640px;"></iframe>
+</div>
+<script>
+  window.$docsify = {
+    coverpage: true,
+    name: 'mUtils',
+    loadSidebar: true,
+    alias: {
+      '/.*/_sidebar.md': '/_sidebar.md'
+    },
+    repo: 'https://github.com/Alie-z/mUtils',
+    maxLevel: 4,
+    subMaxLevel: 2,
+    search: {
+      maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      paths: 'auto', // or 'auto'
+      placeholder: 'Type to search',
+
+      // 支持本地化
+      placeholder: {
+        '/zh-cn/': '搜索',
+        '/': 'Type to search'
       },
-      repo: 'https://github.com/Alie-z/mUtils',
-      maxLevel: 4,
-      subMaxLevel: 2,
-      search: {
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: 'auto', // or 'auto'
-        placeholder: 'Type to search',
 
-        // 支持本地化
-        placeholder: {
-          '/zh-cn/': '搜索',
-          '/': 'Type to search'
-        },
+      noData: 'No Results!',
 
-        noData: 'No Results!',
-
-        // 支持本地化
-        noData: {
-          '/zh-cn/': '找不到结果',
-          '/': 'No Results'
-        },
-
-        // 搜索标题的最大程级, 1 - 6
-        depth: 3
+      // 支持本地化
+      noData: {
+        '/zh-cn/': '找不到结果',
+        '/': 'No Results'
       },
-      plugins: [
-        function (hook, vm) {
-          hook.beforeEach(function (html) {
-            if (/githubusercontent\.com/.test(vm.route.file)) {
-              url = vm.route.file
-                .replace('raw.githubusercontent.com', 'github.com')
-                .replace(/\/master/, '/blob/master')
-            } else {
-              url = 'https://github.com/Alie-z/mUtils/blob/master/docs/' + vm.route.file
-            }
-            var editHtml = '[:memo: Edit Document](' + url + ')\n'
-            return editHtml
-              + html
-              + '\n\n----\n\n'
-              + '<a href="https://github.com/Alie-z/mUtils" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by @Aliez</a>'
-          })
-        }
-      ]
-    }
-  </script>
-  <script src="//unpkg.com/docsify-edit-on-github@1.0.1/index.js"></script>
-  <script src="./docsify.js"></script>
-  <script src="./js/mUtils.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
 
-  <!-- 图片缩放 - Zoom image -->
-  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+      // 搜索标题的最大程级, 1 - 6
+      depth: 3
+    },
+    plugins: [
+      function (hook, vm) {
+        hook.beforeEach(function (html) {
+          if (/githubusercontent\.com/.test(vm.route.file)) {
+            url = vm.route.file
+              .replace('raw.githubusercontent.com', 'github.com')
+              .replace(/\/master/, '/blob/master')
+          } else {
+            url = 'https://github.com/Alie-z/mUtils/blob/master/docs/' + vm.route.file
+          }
+          var editHtml = '[:memo: Edit Document](' + url + ')\n'
+          return editHtml
+            + html
+            + '\n\n----\n\n'
+            + '<a href="https://github.com/Alie-z/mUtils" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by @Aliez</a>'
+        })
+      }
+    ]
+  }
+</script>
+<script src="//unpkg.com/docsify-edit-on-github@1.0.1/index.js"></script>
+<script src="./docsify.js"></script>
+<script src="./js/mUtils.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
 
-  <!-- edit-on-github -->
-  <script src="https://unpkg.com/docsify-copy-code@2"></script>
-  <script>
-    EditOnGithubPlugin.create(
-      'https://github.com/Alie-z/mUtils/docs/'
-    )
-  </script>
+<!-- 图片缩放 - Zoom image -->
+<script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+
+<!-- edit-on-github -->
+<script src="https://unpkg.com/docsify-copy-code@2"></script>
+<script>
+  EditOnGithubPlugin.create(
+    'https://github.com/Alie-z/mUtils/docs/'
+  )
+</script>
 </body>
 </html>

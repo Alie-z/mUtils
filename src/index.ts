@@ -4,7 +4,8 @@ import './style.less'
  * @version 1.0.5
  * @description 关于通用js的收录以及整合方便日后使用
  */
-import Api from "./lib/requestUtils/http";
+// import Api from './http';
+import './http'
 import {notification} from './lib/feedbackUtils/index'
 // dom操作
 // import { DomUtils } from './../dist/lib/index'
@@ -29,18 +30,7 @@ import ErChaShu from './test/erchashu'
 import {combineArray, lengthOfLongestSubstring} from './test/arr'
 
 
-FeedbackUtils.Toast('toast')
-const params = {
-  // baseURL: 'https://www.uniqorn.vip/api/',
-}
-const API = new Api(params)
-async function Apidemo() {
-  // const res = await API._getDetail({id: '74501'})
-  const res = await API._getIns({})
-  console.log(res)
-}
-
-Apidemo()
+// FeedbackUtils.Toast('090909')
 //
 // EventUtils.on('axios-loading', (res) => {
 //   alert(1)
@@ -69,20 +59,20 @@ Apidemo()
 // console.log('-----------------------')
 // console.log(GenericUtils.calcStringLength('☮✌☏1{', true))
 //
-// async function bbb() {
-//   await PromiseUtils.sleep(5000)
-//   const notificationData = {
-//     title: '疏影横斜水清浅',
-//     body: '暗香浮动月黄昏',
-//     icon: 'http://static.huadong.uniqorn.com.cn/js/utils/5deb72135a682e007c405d87.png',
-//     click: () => {
-//       window.open('https://alie-z.github.io/mUtils/#/lib/_StoreUtils')
-//     }
-//   }
-//   notification(notificationData)
-// }
-//
-// bbb()
+async function bbb() {
+  await PromiseUtils.sleep(5000)
+  const notificationData = {
+    title: '疏影横斜水清浅',
+    body: '暗香浮动月黄昏',
+    icon: 'http://static.huadong.uniqorn.com.cn/js/utils/5deb72135a682e007c405d87.png',
+    click: () => {
+      window.open('https://alie-z.github.io/mUtils/#/lib/_StoreUtils')
+    }
+  }
+  notification(notificationData)
+}
+
+bbb()
 //
 // DomUtils.cssFilter(document.body, 'grayscale', '.1')
 //
