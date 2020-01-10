@@ -1,14 +1,15 @@
 <template>
-  <div class="request pageWrap">
-    <div class='m_b_20'>
-      <van-button type="info" @click='_renderVideoInfo'>get 请求</van-button>
-    </div>
-    <van-button type="info" @click='_handlePostLogin'>post 请求</van-button>
-  </div>
+	<div class="request pageWrap">
+		<div class='m_b_20'>
+			<van-button type="info" @click='_renderVideoInfo'>get 请求</van-button>
+		</div>
+		<van-button type="info" @click='_handlePostLogin'>post 请求</van-button>
+	</div>
 </template>
 
 <script lang="ts">
   import {Component, Emit, Inject, Model, Prop, Provide, Vue, Watch} from 'vue-property-decorator'
+  import {FeedbackUtils} from 'js-utils-m'
 
   @Component
   export default class Request extends Vue {
@@ -24,6 +25,7 @@
 
     private async _renderVideoInfo() {
       await this.API._getDetail({id: '999'})
+      FeedbackUtils.Toast('get请求成功！')
     }
 
     private async _handlePostLogin() {
@@ -38,8 +40,8 @@
 </script>
 
 <style lang=scss scoped>
-  .request {
+	.request {
 
-  }
+	}
 
 </style>

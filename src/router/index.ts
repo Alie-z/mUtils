@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import routeView from './routeView'
 
 Vue.use(VueRouter);
 
 const routes = [
+  ...routeView,
   {
     path: '/',
     name: 'home',
@@ -17,17 +19,7 @@ const routes = [
     path: '/about',
     name: 'about',
     component: () => import('../views/About.vue'),
-  },
-  {
-    path: '/request',
-    name: 'request',
-    component: () => import('../views/utilsView/request.vue'),
-  },
-  {
-    path: '/feedback',
-    name: 'feedback',
-    component: () => import('../views/utilsView/feedback.vue'),
-  },
+  }
 ];
 
 const router = new VueRouter({
@@ -37,3 +29,4 @@ const router = new VueRouter({
 });
 
 export default router;
+

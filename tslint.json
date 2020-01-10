@@ -14,6 +14,7 @@
       "spaces",
       2
     ],
+    "max-classes-per-file": false,
     "interface-name": false,
     "no-consecutive-blank-lines": false,
     "object-literal-sort-keys": false,
@@ -36,7 +37,7 @@
     "no-trailing-whitespace": false,
     "space-before-function-paren": false,
     "no-console": false,
-    "no-var-requires": false ,
+    "no-var-requires": false,
     "trailing-comma": [
       false,
       {

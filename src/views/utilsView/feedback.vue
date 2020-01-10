@@ -1,20 +1,32 @@
 <template>
-  <div class="request pageWrap">
-    <div class='m_b_20'>
-      <van-button type="primary" @click='_handleNotification'>notification</van-button>
-    </div>
-    <div class="m_b_20">
-      <van-button type="info" @click='_handleToast'>Toast</van-button>
-      <van-button type="danger" @click='_handleToast(6)'>6s</van-button>
-    </div>
-    <div class="m_b_20">
-      <van-button type="primary" @click='_handleLoading'>Loading start</van-button>
-      <van-button type="primary" plain @click='_handleLoadingLine("line")'>Loading line</van-button>
-    </div>
-    <div class="m_b_20">
-      <van-button type="warning" @click='_handleLoadingClose'>Loading clear</van-button>
-    </div>
-  </div>
+	<div class="request pageWrap">
+		<div class='m_b_20'>
+			<van-button type="primary" @click='_handleNotification'>notification</van-button>
+		</div>
+		<div class="m_b_20">
+			<van-row gutter="15">
+				<van-col span="8">
+					<van-button type="info" @click='_handleToast'>Toast</van-button>
+				</van-col>
+				<van-col span="8">
+					<van-button type="danger" @click='_handleToast(6)'>6s</van-button>
+				</van-col>
+			</van-row>
+		</div>
+		<div class="m_b_20">
+			<van-row gutter="15">
+				<van-col span="8">
+					<van-button type="primary" @click='_handleLoading'>Loading start</van-button>
+				</van-col>
+				<van-col span="16">
+					<van-button type="primary" plain @click='_handleLoadingLine("line")'>Loading line</van-button>
+				</van-col>
+			</van-row>
+		</div>
+		<div class="m_b_20">
+			<van-button type="warning" @click='_handleLoadingClose'>Loading clear</van-button>
+		</div>
+	</div>
 </template>
 
 <script lang="ts">
@@ -87,8 +99,8 @@
 </script>
 
 <style lang=scss scoped>
-  .request {
+	.request {
 
-  }
+	}
 
 </style>
