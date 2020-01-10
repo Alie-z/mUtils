@@ -125,14 +125,6 @@ ExpUtils.isObject('{}')  // false
 ExpUtils.isObject({a: 1})   // true
 ```
 
-## isArray
-`isArray`: 方法，判断对象是否是数组
-##### `Demo`:
-```js
-ExpUtils.isArray('[]')  // false
-ExpUtils.isArray(new Array(5))   // true
-```
-
 ## isEmptyObject
 `isEmptyObject`: 方法，判断对象是否是空对象
 #### `Demo`:

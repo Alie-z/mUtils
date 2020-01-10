@@ -91,7 +91,7 @@ DomUtils.computedStyle(document.body, 'width')
 // 单个filter属性传参数
 DomUtils.cssFilter(document.body, 'grayscale', 1)
 // 多个filter属性传参数
-  D_JS_UTILS.dom.cssFilter(document.body, {
+  DomUtils.cssFilter(document.body, {
       grayscale: 0.5,
       opacity: 0.7,
       'hue-rotate': '90deg'

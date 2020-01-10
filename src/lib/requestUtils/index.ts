@@ -14,7 +14,7 @@ import {Toast, Loading} from './../feedbackUtils/index'
  *  如过cookie里存了token 会自动获取并加入到请求参数中
  */
 
-export default abstract class Http {
+export default class Http {
   private header: any | HTMLElement;
   private readonly timeout: number | any | ProgressEvent;
   private readonly baseURL: string;

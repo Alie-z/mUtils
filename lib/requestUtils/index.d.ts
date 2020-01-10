@@ -8,7 +8,7 @@
  *  @param { function }loadingEnd 自定义loading 结束 loadingStar传了的情况必需传
  *  如过cookie里存了token 会自动获取并加入到请求参数中
  */
-export default abstract class Http {
+export default class Http {
     private header;
     private readonly timeout;
     private readonly baseURL;

@@ -91,7 +91,7 @@ export function computedStyle(el: any, cssProp: string): void {
  *   'hue-rotate': '90deg'
  * })
  */
-export function cssFilter(el: HTMLElement, type: any, option: string | number): void {
+export function cssFilter(el: HTMLElement, type: any, option?: string | number): void {
   if (typeof type === 'object' && !option) {
     let cssText = ''
     for (let k in type) {

@@ -4,7 +4,7 @@ DecoratorUtils 通用的装饰器
 ## log
 `log` 装饰器，打印类的方法执行信息
 ```ts
-import DecoratorUtils from './DecoratorUtils'
+import {DecoratorUtils} from 'js-utils-m'
 class A {
   @DecoratorUtils.log
   static calcStringLength (str: string, isStrict?: boolean): number {
@@ -33,7 +33,7 @@ A.calcStringLength('nihao')
 ## fnTime
 `fnTime` 装饰器，打印方法执行时间
 ```ts
-import DecoratorUtils from './DecoratorUtils'
+import {DecoratorUtils} from 'js-utils-m'
 class A {
   @DecoratorUtils.fnTime
   static calcStringLength (str: string, isStrict?: boolean): number {
