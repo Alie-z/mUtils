@@ -1,5 +1,8 @@
 <template>
 	<div class="request pageWrap">
+		<div class='m_b_20'>
+			<van-button type="primary" >现在是竖屏！</van-button>
+		</div>
 	</div>
 </template>
 

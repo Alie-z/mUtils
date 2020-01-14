@@ -250,33 +250,88 @@
     ]
   },
   {
-    "title": "PerformanceUtils 是浏览器性能相关的监控",
+    "title": "PerformanceUtils 浏览器性能相关的监控",
     "list": [
       {
-        "name": "PerformanceUtils",
+        "name": "dnsTime",
         "path": "performance",
-        "state": ""
+        "state": "DNS查询耗时"
+      },
+      {
+        "name": "loadTime",
+        "path": "performance",
+        "state": "白屏时间"
+      },
+      {
+        "name": "requestTime",
+        "path": "performance",
+        "state": "request请求耗时"
+      },
+      {
+        "name": "tcpTime",
+        "path": "performance",
+        "state": "TCP链接耗时"
+      },
+      {
+        "name": "renderDomTime",
+        "path": "performance",
+        "state": "解析dom树耗时"
+      },
+      {
+        "name": "readyDomTime",
+        "path": "performance",
+        "state": "用户可操作时间节点"
+      },
+      {
+        "name": "loadFullTime",
+        "path": "performance",
+        "state": "onload时间"
+      },
+      {
+        "name": "logger",
+        "path": "performance",
+        "state": "打印已知的所有数据信息"
       }
     ]
   },
   {
-    "title": "url的操作，浏览器相关",
+    "title": "url的操作",
     "list": [
       {
-        "name": "UrlUtils",
+        "name": "parseUrl",
         "path": "url",
-        "state": ""
-      }
-    ]
-  },
-  {
-    "title": "ImageUtils",
-    "list": [
+        "state": "获取url地址的参数"
+      },
       {
-        "name": "ImageUtils",
-        "path": "image",
-        "state": ""
+        "name": "stringifyUrl",
+        "path": "url",
+        "state": "单层object对象转为url参数"
+      },
+      {
+        "name": "deleteUrlParam",
+        "path": "url",
+        "state": "移除url中不想要的参数"
       }
-    ]
+    ],
+    "other": {
+      "title": "ImageUtils",
+      "list": [
+        {
+          "name": "addSourse",
+          "path": "image",
+          "state": "添加需要合成的图片信息"
+        },
+        {
+          "name": "compose",
+          "path": "image",
+          "state": " canvas渲染"
+        },
+        {
+          "name": "convertCanvasToImage",
+          "path": "image",
+          "state": "canvase转换成图片"
+        }
+      ]
+    }
   }
 ]

@@ -1,27 +1,18 @@
 <template>
 	<div class="request pageWrap">
-		<div class='m_b_20'>
-		</div>
-		<div class="m_b_20">
-			<van-row gutter="15">
-				<van-col span="8">
-					<van-button type="primary" @click='_handleAddClass("m_b_20")'>hasClass</van-button>
-				</van-col>
-				<van-col span="16">
-					<van-button type="primary" @click='_handleAddClass("m_b_22")'>hasClass</van-button>
-				</van-col>
-			</van-row>
+		<div class='m_b_20' v-for="(item) in dataName" :key='item'>
+			<van-button type="primary" @click='_handleUrl(item)'>{{item}}</van-button>
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
   import {Component, Emit, Inject, Model, Prop, Provide, Vue, Watch} from 'vue-property-decorator'
-  import {DomUtils} from 'js-utils-m'
+  import {UrlUtils} from 'js-utils-m'
 
   @Component
   export default class Request extends Vue {
-    private API: any;
+    private dataName: object = ['parseUrl', 'stringifyUrl', 'deleteUrlParam']
 
     private created() {
       console.log('created')
@@ -31,10 +22,22 @@
       console.log('mounted')
     }
 
-    private _handleAddClass(className: string) {
-      DomUtils.hasClass(document.body, className)
+    private _handleUrl(name: string) {
+      let value
+      switch (name) {
+        case 'parseUrl':
+          value = '-' + JSON.stringify(UrlUtils.parseUrl(window.location.href))
+          console.log('value', UrlUtils.parseUrl(window.location.href))
+          break
+        case 'stringifyUrl':
+          value = '-' + UrlUtils.stringifyUrl({a: 1, b: 2})
+          break
+        case 'deleteUrlParam':
+          window.location.href = UrlUtils.deleteUrlParam(['code'], window.location.href)
+          break
+      }
+      this.$toast(`${name}${value ? value : ''}`)
     }
-
   }
 </script>
 
