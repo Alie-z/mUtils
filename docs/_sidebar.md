@@ -15,4 +15,4 @@
   * [LogUtils](/lib/_LogUtils.md)
   * [PerformanceUtils](/lib/_PerformanceUtils.md)
   * [UrlUtils](/lib/_UrlUtils.md)
-  * [ImageUtils](/lib/_ImageUtils.md)
+

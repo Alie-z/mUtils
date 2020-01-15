@@ -88,8 +88,20 @@ export declare function uniqueArray(arr: any[]): any[];
  * @description 文件转成blob流
  * @param { File } dataUrl  单个file
  * @return { Blob } 返回新的文件流  可以append到formdata中
+ *
+## dataUrlToBlob
+`dataUrlToBlob` file转成blob数据流的格式
+```ts
+/**
+ * @description 文件转成blob流
+ * @param { File } dataUrl  单个file
+ * @return { Blob } 返回新的文件流  可以append到formdata中
+  ```
+  ##### `Demo`:
+  ```ts
+  StoreUtils.dataUrlToBlob(file[0])
+  ```
  */
-export declare function dataUrlToBlob(dataUrl: any): Blob;
 /**
  * @description 返回数组之间的并集
  * @param { Array } args 可以是多个数组，数量不限制

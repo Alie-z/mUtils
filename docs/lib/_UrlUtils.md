@@ -1,5 +1,5 @@
 # UrlUtils
-url的操作，浏览器相关
+url的操作
 
 ## parseUrl
 `parseUrl` 获取url地址的参数信转化成键值对的对象格式

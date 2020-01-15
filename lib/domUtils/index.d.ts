@@ -46,4 +46,4 @@ export declare function computedStyle(el: any, cssProp: string): void;
  *   'hue-rotate': '90deg'
  * })
  */
-export declare function cssFilter(el: HTMLElement, type: any, option: string | number): void;
+export declare function cssFilter(el: HTMLElement, type: any, option?: string | number): void;
